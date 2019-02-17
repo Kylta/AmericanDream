@@ -51,12 +51,15 @@ class RemoteWeatherLoaderTests: XCTestCase {
     func test_load_deliversErrorOnNon200HTTPResponse() {
         let (sut, client) = makeSUT()
 
-        var capturedError = [RemoteWeatherLoader.Error]()
-        sut.load { capturedError.append($0!)}
+        let samples = [199, 201, 300, 400, 500]
 
-        client.complete(withStatusCode: 400)
+        samples.enumerated().forEach { index, code in
+            var capturedError = [RemoteWeatherLoader.Error]()
+            sut.load { capturedError.append($0!)}
 
-        XCTAssertEqual(capturedError, [.invalidData])
+            client.complete(withStatusCode: code, at: index)
+            XCTAssertEqual(capturedError, [.invalidData])
+        }
     }
 
     // MARK: - Helpers
