@@ -72,8 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				46E24673221949210066F113 /* Info.plist */,
-				46E24689221949E80066F113 /* WeatherItem.swift */,
-				46E2468D22194C680066F113 /* WeatherLoader.swift */,
+				46E2468F22194CDA0066F113 /* Weather Feature */,
 			);
 			path = OCWeather;
 			sourceTree = "<group>";
@@ -84,6 +83,15 @@
 				46E2467F221949220066F113 /* Info.plist */,
 			);
 			path = OCWeatherTests;
+			sourceTree = "<group>";
+		};
+		46E2468F22194CDA0066F113 /* Weather Feature */ = {
+			isa = PBXGroup;
+			children = (
+				46E24689221949E80066F113 /* WeatherItem.swift */,
+				46E2468D22194C680066F113 /* WeatherLoader.swift */,
+			);
+			path = "Weather Feature";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
