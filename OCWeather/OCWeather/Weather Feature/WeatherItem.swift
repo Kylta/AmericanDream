@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct WeatherItem {
-    let name: String
-    let date: Int
-    let weather: String
-    let description: String
-    let temperature: Double
-    let wind: Double
+public struct WeatherItem: Equatable {
+    public let name: String
+    public let date: Int
+    public let weather: String
+    public let description: String
+    public let temperature: Double
+    public let wind: Double
 }
