@@ -13,6 +13,6 @@ public enum LoadWeatherResult {
     case failure(Error)
 }
 
-protocol WeatherLoader {
+public protocol WeatherLoader {
     func load(completion: @escaping (LoadWeatherResult) -> Void)
 }
