@@ -30,7 +30,7 @@ class HTTPClientSpy: HTTPClient {
 
 class RemoteWeatherLoaderTests: XCTestCase {
 
-    func test_init() {
+    func test_init_doesNotRequestDataFromURL() {
         let client = HTTPClientSpy()
         _ = RemoteWeatherLoader(client: client)
 
