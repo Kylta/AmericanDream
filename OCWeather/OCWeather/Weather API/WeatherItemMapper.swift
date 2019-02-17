@@ -35,14 +35,6 @@ internal final class WeatherItemMapper: Decodable {
         let description: String
     }
 
-    init(name: String, date: Int, weather: [Weather], temperature: Double, wind: Double) {
-        self.name = name
-        self.date = date
-        self.weather = weather
-        self.temperature = temperature
-        self.wind = wind
-    }
-
     enum CodingKeys: String, CodingKey {
         case name, wind, main, weather
         case date = "dt"
