@@ -18,7 +18,7 @@ class RemoteWeatherLoaderTests: XCTestCase {
     }
 
     func test_load_requestDataFromURL() {
-        let url = URL(string: "http://a-given-url.com")!
+        let url = anyURL()
         let (sut, client) = makeSUT(url: url)
 
         sut.load { _ in }
@@ -27,7 +27,7 @@ class RemoteWeatherLoaderTests: XCTestCase {
     }
 
     func test_loadTwice_requestDataFromURLTwice() {
-        let url = URL(string: "http://a-given-url.com")!
+        let url = anyURL()
         let (sut, client) = makeSUT(url: url)
 
         sut.load { _ in }
@@ -52,7 +52,7 @@ class RemoteWeatherLoaderTests: XCTestCase {
 
         samples.enumerated().forEach { index, code in
             expect(sut: sut, toCompleteWithResult: .failure(.invalidData), when: {
-                let invalidJSON = Data(bytes: "invalid json".utf8)
+                let invalidJSON = makeJSON(valid: false)
                 client.complete(withStatusCode: code, data: invalidJSON, at: index)
             })
         }
@@ -62,7 +62,7 @@ class RemoteWeatherLoaderTests: XCTestCase {
         let (sut, client) = makeSUT()
 
         expect(sut: sut, toCompleteWithResult: .failure(.invalidData), when: {
-            let invalidJSON = Data(bytes: "invalid json".utf8)
+            let invalidJSON = makeJSON(valid: false)
             client.complete(withStatusCode: 200, data: invalidJSON)
         })
     }
@@ -79,14 +79,13 @@ class RemoteWeatherLoaderTests: XCTestCase {
 
     func test_load_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
         let client = HTTPClientSpy()
-        let url = URL(string: "https://any-url.com")!
-        var sut: RemoteWeatherLoader? = RemoteWeatherLoader(client: client, url: url)
+        var sut: RemoteWeatherLoader? = RemoteWeatherLoader(client: client, url: anyURL())
 
         var capturedResults = [RemoteWeatherLoader.Result]()
         sut?.load { capturedResults.append($0) }
 
         sut = nil
-        let invalidJSON = Data(bytes: "invalid json".utf8)
+        let invalidJSON = makeJSON(valid: false)
         client.complete(withStatusCode: 200, data: invalidJSON)
 
         XCTAssertTrue(capturedResults.isEmpty)
@@ -112,10 +111,21 @@ class RemoteWeatherLoaderTests: XCTestCase {
 
     fileprivate func makeItem(name: String, date: String, weather: String, description: String, temperature: Double, wind: Double) -> (model: WeatherItem, json: Data) {
         let item = WeatherItem(name: name, date: date, weather: weather, description: description, temperature: temperature, wind: wind)
-        let filePath = Bundle(for: type(of: self)).url(forResource: "weather", withExtension: "json")!
-        let json = try! Data(contentsOf: filePath)
+        let json = makeJSON(valid: true)
 
         return (item, json)
+    }
+
+    fileprivate func makeJSON(valid: Bool) -> Data {
+        let invalidJSON = Data(bytes: "invalid json".utf8)
+        let filePath = Bundle(for: type(of: self)).url(forResource: "weather", withExtension: "json")!
+        let validJSON = try! Data(contentsOf: filePath)
+
+        return valid ? validJSON : invalidJSON
+    }
+
+    fileprivate func anyURL() -> URL {
+        return URL(string: "https://any-url.com")!
     }
 
     private func expect(sut: RemoteWeatherLoader, toCompleteWithResult result: RemoteWeatherLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
