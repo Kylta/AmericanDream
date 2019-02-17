@@ -73,7 +73,7 @@ class RemoteWeatherLoaderTests: XCTestCase {
         let item = makeItem(name: "a name", date: "02-16-2019 19:00", weather: "a weather", description: "a description", temperature: 2.0, wind: 3.0)
 
         expect(sut: sut, toCompleteWith: .success(item.model), when: {
-            client.complete(withStatusCode: 200, data: item.json)
+            client.complete(withStatusCode: 200, data: makeJSON(valid: true))
         })
     }
 
@@ -116,8 +116,25 @@ class RemoteWeatherLoaderTests: XCTestCase {
 
     fileprivate func makeJSON(valid: Bool) -> Data {
         let invalidJSON = Data(bytes: "invalid json".utf8)
-        let filePath = Bundle(for: type(of: self)).url(forResource: "weather", withExtension: "json")!
-        let validJSON = try! Data(contentsOf: filePath)
+        let json = """
+        {
+            "name": "a name",
+            "dt": 1550340000,
+            "weather": [{
+                "main": "a weather",
+                "description": "a description"
+            }],
+            "wind": {
+                "speed": 3.0
+            },
+            "main": {
+                "temp": 2.0
+            }
+        }
+"""
+        let jsonString = json.data(using: .utf8)!
+        let jsonData = try! JSONSerialization.jsonObject(with: jsonString, options: []) as! [String: Any]
+        let validJSON = try! JSONSerialization.data(withJSONObject: jsonData)
 
         return valid ? validJSON : invalidJSON
     }
