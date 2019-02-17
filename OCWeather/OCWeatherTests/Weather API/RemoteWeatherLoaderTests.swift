@@ -39,7 +39,7 @@ class RemoteWeatherLoaderTests: XCTestCase {
     func test_load_deliversErrorOnClientError() {
         let (sut, client) = makeSUT()
 
-        expect(sut: sut, toCompleteWith: .failure(RemoteWeatherLoader.Error.connectivity), when: {
+        expect(sut: sut, toCompleteWith: failure(.connectivity), when: {
             let clientError = NSError(domain: "test", code: 0)
             client.complete(with: clientError)
         })
@@ -51,7 +51,7 @@ class RemoteWeatherLoaderTests: XCTestCase {
         let samples = [199, 201, 300, 400, 500]
 
         samples.enumerated().forEach { index, code in
-            expect(sut: sut, toCompleteWith: .failure(RemoteWeatherLoader.Error.invalidData), when: {
+            expect(sut: sut, toCompleteWith: failure(.invalidData), when: {
                 let invalidJSON = makeJSON(valid: false)
                 client.complete(withStatusCode: code, data: invalidJSON, at: index)
             })
@@ -61,7 +61,7 @@ class RemoteWeatherLoaderTests: XCTestCase {
     func test_load_deliversErrorOn200HTTPResponseWithInvalidJSON() {
         let (sut, client) = makeSUT()
 
-        expect(sut: sut, toCompleteWith: .failure(RemoteWeatherLoader.Error.invalidData), when: {
+        expect(sut: sut, toCompleteWith: failure(.invalidData), when: {
             let invalidJSON = makeJSON(valid: false)
             client.complete(withStatusCode: 200, data: invalidJSON)
         })
@@ -101,6 +101,10 @@ class RemoteWeatherLoaderTests: XCTestCase {
         trackMemoryLeaks(instance: sut, file: file, line: line)
 
         return (sut, client)
+    }
+
+    fileprivate func failure(_ error: RemoteWeatherLoader.Error) -> RemoteWeatherLoader.Result {
+        return .failure(error)
     }
 
     fileprivate func trackMemoryLeaks(instance: AnyObject, file: StaticString = #file, line: UInt = #line) {
