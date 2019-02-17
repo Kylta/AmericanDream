@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class RemoteWeatherLoader {
+public final class RemoteWeatherLoader: WeatherLoader {
     private let client: HTTPClient
     private let url: URL
 
