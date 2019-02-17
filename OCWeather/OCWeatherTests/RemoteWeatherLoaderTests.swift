@@ -67,22 +67,32 @@ class RemoteWeatherLoaderTests: XCTestCase {
         })
     }
 
-        func test_load_deliversItemOn200HTTPResponseWithJSONItem() {
-            let (sut, client) = makeSUT()
+    func test_load_deliversItemOn200HTTPResponseWithJSONItem() {
+        let (sut, client) = makeSUT()
 
-            let item = makeItem(name: "a name", date: "02-16-2019 19:00", weather: "a weather", description: "a description", temperature: 2.0, wind: 3.0)
+        let item = makeItem(name: "a name", date: "02-16-2019 19:00", weather: "a weather", description: "a description", temperature: 2.0, wind: 3.0)
 
-            expect(sut: sut, toCompleteWithResult: .success(item.model), when: {
-                client.complete(withStatusCode: 200, data: item.json)
-            })
-        }
+        expect(sut: sut, toCompleteWithResult: .success(item.model), when: {
+            client.complete(withStatusCode: 200, data: item.json)
+        })
+    }
 
     // MARK: - Helpers
 
-    private func makeSUT(url: URL = URL(string: "http://a-url.com")!) -> (sut: RemoteWeatherLoader, client: HTTPClientSpy) {
+    private func makeSUT(url: URL = URL(string: "http://a-url.com")!, file: StaticString = #file, line: UInt = #line) -> (sut: RemoteWeatherLoader, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
         let sut = RemoteWeatherLoader(client: client, url: url)
+
+        trackMemoryLeaks(instance: client, file: file, line: line)
+        trackMemoryLeaks(instance: sut, file: file, line: line)
+
         return (sut, client)
+    }
+
+    fileprivate func trackMemoryLeaks(instance: AnyObject, file: StaticString = #file, line: UInt = #line) {
+        addTeardownBlock { [weak instance] in
+            XCTAssertNil(instance, "Instance should have been deallocated. Potential memory leak.", file: file, line: line)
+        }
     }
 
     fileprivate func makeItem(name: String, date: String, weather: String, description: String, temperature: Double, wind: Double) -> (model: WeatherItem, json: Data) {
