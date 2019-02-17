@@ -40,7 +40,7 @@ class RemoteWeatherLoaderTests: XCTestCase {
         let (sut, client) = makeSUT()
 
         var capturedError = [RemoteWeatherLoader.Error]()
-        sut.load { capturedError.append($0!)}
+        sut.load { capturedError.append($0)}
 
         let clientError = NSError(domain: "test", code: 0)
         client.complete(with: clientError)
@@ -55,7 +55,7 @@ class RemoteWeatherLoaderTests: XCTestCase {
 
         samples.enumerated().forEach { index, code in
             var capturedError = [RemoteWeatherLoader.Error]()
-            sut.load { capturedError.append($0!)}
+            sut.load { capturedError.append($0)}
 
             client.complete(withStatusCode: code, at: index)
             XCTAssertEqual(capturedError, [.invalidData])
@@ -71,18 +71,18 @@ class RemoteWeatherLoaderTests: XCTestCase {
     }
 
     class HTTPClientSpy: HTTPClient {
-        var messages = [(url: URL, completion: (Error?, HTTPURLResponse?) -> Void)]()
+        var messages = [(url: URL, completion: (HTTPClientResult) -> Void)]()
 
         var requestedURLs: [URL] {
             return messages.map { $0.url }
         }
 
-        func get(from url: URL, completion: @escaping (Error?, HTTPURLResponse?) -> Void) {
+        func get(from url: URL, completion: @escaping (HTTPClientResult) -> Void) {
             messages.append((url, completion))
         }
 
         func complete(with error: Error, at index: Int = 0) {
-            messages[index].completion(error, nil)
+            messages[index].completion(.failure(error))
         }
 
         func complete(withStatusCode code: Int, at index: Int = 0) {
@@ -92,7 +92,7 @@ class RemoteWeatherLoaderTests: XCTestCase {
                 httpVersion: nil,
                 headerFields: nil)!
 
-            messages[index].completion(nil, response)
+            messages[index].completion(.success(response))
         }
     }
 }
