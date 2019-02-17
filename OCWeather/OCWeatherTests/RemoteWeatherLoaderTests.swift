@@ -10,9 +10,15 @@ import XCTest
 
 class RemoteWeatherLoader {
     let client: HTTPClient
+    let url: URL
 
-    init(client: HTTPClient) {
+    init(client: HTTPClient, url: URL) {
         self.client = client
+        self.url = url
+    }
+
+    func load() {
+        client.get(from: url)
     }
 }
 
@@ -32,8 +38,19 @@ class RemoteWeatherLoaderTests: XCTestCase {
 
     func test_init_doesNotRequestDataFromURL() {
         let client = HTTPClientSpy()
-        _ = RemoteWeatherLoader(client: client)
+        let url = URL(string: "http://a-url.com")!
+        _ = RemoteWeatherLoader(client: client, url: url)
 
         XCTAssertNil(client.requestedURL)
+    }
+
+    func test_load_requestDataFromURL() {
+        let client = HTTPClientSpy()
+        let url = URL(string: "http://a-given-url.com")!
+        let sut = RemoteWeatherLoader(client: client, url: url)
+
+        sut.load()
+
+        XCTAssertEqual(client.requestedURL, url)
     }
 }
