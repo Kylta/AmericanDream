@@ -70,13 +70,10 @@ class RemoteWeatherLoaderTests: XCTestCase {
         func test_load_deliversItemOn200HTTPResponseWithJSONItem() {
             let (sut, client) = makeSUT()
 
-            let item = WeatherItem(name: "a name", date: "02-16-2019 19:00", weather: "a weather", description: "a description", temperature: 2.0, wind: 3.0)
+            let item = makeItem(name: "a name", date: "02-16-2019 19:00", weather: "a weather", description: "a description", temperature: 2.0, wind: 3.0)
 
-            expect(sut: sut, toCompleteWithResult: .success(item), when: {
-                let filePath = Bundle(for: type(of: self)).url(forResource: "weather", withExtension: "json")!
-                let data = try! Data(contentsOf: filePath)
-
-                client.complete(withStatusCode: 200, data: data)
+            expect(sut: sut, toCompleteWithResult: .success(item.model), when: {
+                client.complete(withStatusCode: 200, data: item.json)
             })
         }
 
@@ -86,6 +83,14 @@ class RemoteWeatherLoaderTests: XCTestCase {
         let client = HTTPClientSpy()
         let sut = RemoteWeatherLoader(client: client, url: url)
         return (sut, client)
+    }
+
+    fileprivate func makeItem(name: String, date: String, weather: String, description: String, temperature: Double, wind: Double) -> (model: WeatherItem, json: Data) {
+        let item = WeatherItem(name: name, date: date, weather: weather, description: description, temperature: temperature, wind: wind)
+        let filePath = Bundle(for: type(of: self)).url(forResource: "weather", withExtension: "json")!
+        let json = try! Data(contentsOf: filePath)
+
+        return (item, json)
     }
 
     private func expect(sut: RemoteWeatherLoader, toCompleteWithResult result: RemoteWeatherLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
