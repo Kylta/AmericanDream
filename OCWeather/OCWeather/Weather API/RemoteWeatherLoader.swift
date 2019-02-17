@@ -39,12 +39,12 @@ public final class RemoteWeatherLoader {
     public func load(completion: @escaping (Result) -> Void) {
         client.get(from: url) { result in
             switch result {
-            case let .success(data, _):
-                if let weatherMapper = try? JSONDecoder().decode(WeatherItemMapper.self, from: data) {
-                    completion(.success(weatherMapper.weatherItem))
-                } else {
-                    completion(.failure(.invalidData))
+            case let .success(data, response):
+                guard response.statusCode == 200,
+                    let weatherItem = try? JSONDecoder().decode(WeatherItemMapper.self, from: data) else {
+                    return completion(.failure(.invalidData))
                 }
+                completion(.success(weatherItem.weatherItem))
             case .failure:
                 completion(.failure(.connectivity))
             }
