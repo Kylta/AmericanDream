@@ -68,11 +68,11 @@ internal final class WeatherItemMapper: Decodable {
         wind = try windContainer.decode(Double.self, forKey: .speed)
     }
 
-    static var OK_200: Int {
+    private static var OK_200: Int {
         return 200
     }
 
-    static func map(_ data: Data, _ response: HTTPURLResponse) -> RemoteWeatherLoader.Result {
+    internal static func map(_ data: Data, _ response: HTTPURLResponse) -> RemoteWeatherLoader.Result {
         guard response.statusCode == OK_200,
             let weatherItem = try? JSONDecoder().decode(WeatherItemMapper.self, from: data) else {
                 return .failure(.invalidData)
