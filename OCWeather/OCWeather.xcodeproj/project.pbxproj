@@ -20,6 +20,7 @@
 		46E246A12219B0B30066F113 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E246A02219B0B30066F113 /* URLSessionHTTPClient.swift */; };
 		46E246A92219B61F0066F113 /* OCWeatherAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E246A82219B61F0066F113 /* OCWeatherAPIEndToEndTests.swift */; };
 		46E246AB2219B61F0066F113 /* OCWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E2466F221949210066F113 /* OCWeather.framework */; };
+		46E246B42219C0840066F113 /* XCTestCase+TrackMemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2469E22199FB10066F113 /* XCTestCase+TrackMemoryLeaks.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -343,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46E246B42219C0840066F113 /* XCTestCase+TrackMemoryLeaks.swift in Sources */,
 				46E246A92219B61F0066F113 /* OCWeatherAPIEndToEndTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

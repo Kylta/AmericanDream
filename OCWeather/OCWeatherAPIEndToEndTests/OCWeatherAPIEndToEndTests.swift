@@ -24,10 +24,12 @@ class OCWeatherAPIEndToEndTests: XCTestCase {
 
     // MARK: - Helpers
 
-    private func getWeatherResult() -> LoadWeatherResult? {
+    private func getWeatherResult(file: StaticString = #file, line: UInt = #line) -> LoadWeatherResult? {
         let client = URLSessionHTTPClient()
         let testServerURL = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=Paris,fr&units=metric&APPID=f33ca45f1e944339541f316aef6cda60")!
         let loader = RemoteWeatherLoader(client: client, url: testServerURL)
+        trackMemoryLeaks(instance: client, file: file, line: line)
+        trackMemoryLeaks(instance: loader, file: file, line: line)
 
         let exp = expectation(description: "Wait for load completion")
 
