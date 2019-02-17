@@ -40,12 +40,10 @@ class RemoteWeatherLoaderTests: XCTestCase {
         let (sut, client) = makeSUT()
         client.error = NSError(domain: "test", code: 0)
 
-        var capturedError: RemoteWeatherLoader.Error?
-        sut.load { error in
-            capturedError = error
-        }
+        var capturedError = [RemoteWeatherLoader.Error]()
+        sut.load { capturedError.append($0)}
 
-        XCTAssertEqual(capturedError, .connectivity)
+        XCTAssertEqual(capturedError, [.connectivity])
     }
 
     // MARK: - Helpers
