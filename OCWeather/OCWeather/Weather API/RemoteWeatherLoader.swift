@@ -22,10 +22,7 @@ public final class RemoteWeatherLoader {
         case invalidData
     }
 
-    public enum Result: Equatable {
-        case success(WeatherItem)
-        case failure(Error)
-    }
+    public typealias Result = LoadWeatherResult<Error>
 
     public func load(completion: @escaping (Result) -> Void) {
         client.get(from: url) { [weak self] result in

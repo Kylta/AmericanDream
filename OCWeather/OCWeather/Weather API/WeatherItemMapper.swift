@@ -77,7 +77,7 @@ internal final class WeatherItemMapper: Decodable {
             let weatherItemMapper = try? JSONDecoder().decode(WeatherItemMapper.self, from: data) else {
                 return .failure(.invalidData)
         }
-        
+
         return .success(weatherItemMapper.weatherItem)
     }
 }
