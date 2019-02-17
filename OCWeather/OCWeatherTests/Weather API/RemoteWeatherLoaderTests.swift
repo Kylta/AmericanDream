@@ -116,25 +116,8 @@ class RemoteWeatherLoaderTests: XCTestCase {
 
     fileprivate func makeJSON(valid: Bool) -> Data {
         let invalidJSON = Data(bytes: "invalid json".utf8)
-        let json = """
-        {
-            "name": "a name",
-            "dt": 1550340000,
-            "weather": [{
-                "main": "a weather",
-                "description": "a description"
-            }],
-            "wind": {
-                "speed": 3.0
-            },
-            "main": {
-                "temp": 2.0
-            }
-        }
-"""
-        let jsonString = json.data(using: .utf8)!
-        let jsonData = try! JSONSerialization.jsonObject(with: jsonString, options: []) as! [String: Any]
-        let validJSON = try! JSONSerialization.data(withJSONObject: jsonData)
+        let filePath = Bundle(for: type(of: self)).url(forResource: "weather", withExtension: "json")!
+        let validJSON = try! Data(contentsOf: filePath)
 
         return valid ? validJSON : invalidJSON
     }
