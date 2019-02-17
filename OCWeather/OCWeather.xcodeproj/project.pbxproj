@@ -17,6 +17,7 @@
 		46E24699221977930066F113 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E24698221977930066F113 /* HTTPClient.swift */; };
 		46E2469C22198DDE0066F113 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2469B22198DDE0066F113 /* URLSessionHTTPClientTests.swift */; };
 		46E2469F22199FB10066F113 /* XCTestCase+TrackMemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2469E22199FB10066F113 /* XCTestCase+TrackMemoryLeaks.swift */; };
+		46E246A12219B0B30066F113 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E246A02219B0B30066F113 /* URLSessionHTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		46E24698221977930066F113 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		46E2469B22198DDE0066F113 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		46E2469E22199FB10066F113 /* XCTestCase+TrackMemoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+TrackMemoryLeaks.swift"; sourceTree = "<group>"; };
+		46E246A02219B0B30066F113 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				46E24690221950390066F113 /* RemoteWeatherLoader.swift */,
 				46E2469622196F5A0066F113 /* WeatherItemMapper.swift */,
 				46E24698221977930066F113 /* HTTPClient.swift */,
+				46E246A02219B0B30066F113 /* URLSessionHTTPClient.swift */,
 			);
 			path = "Weather API";
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				46E2468E22194C680066F113 /* WeatherLoader.swift in Sources */,
 				46E2469722196F5A0066F113 /* WeatherItemMapper.swift in Sources */,
 				46E24691221950390066F113 /* RemoteWeatherLoader.swift in Sources */,
+				46E246A12219B0B30066F113 /* URLSessionHTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
