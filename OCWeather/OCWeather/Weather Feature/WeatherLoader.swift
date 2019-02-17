@@ -13,8 +13,6 @@ public enum LoadWeatherResult<Error: Swift.Error> {
     case failure(Error)
 }
 
-extension LoadWeatherResult: Equatable where Error: Equatable {}
-
 protocol WeatherLoader {
     associatedtype Error: Swift.Error
     func load(completion: @escaping (LoadWeatherResult<Error>) -> Void)
