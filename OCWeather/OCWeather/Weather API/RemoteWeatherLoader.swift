@@ -22,7 +22,7 @@ public final class RemoteWeatherLoader: WeatherLoader {
         case invalidData
     }
 
-    public typealias Result = LoadWeatherResult<Error>
+    public typealias Result = LoadWeatherResult
 
     public func load(completion: @escaping (Result) -> Void) {
         client.get(from: url) { [weak self] result in
@@ -32,7 +32,7 @@ public final class RemoteWeatherLoader: WeatherLoader {
             case let .success(data, response):
                 completion(WeatherItemMapper.map(data, response))
             case .failure:
-                completion(.failure(.connectivity))
+                completion(.failure(RemoteWeatherLoader.Error.connectivity))
             }
         }
     }

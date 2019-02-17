@@ -8,12 +8,11 @@
 
 import Foundation
 
-public enum LoadWeatherResult<Error: Swift.Error> {
+public enum LoadWeatherResult {
     case success(WeatherItem)
     case failure(Error)
 }
 
 protocol WeatherLoader {
-    associatedtype Error: Swift.Error
-    func load(completion: @escaping (LoadWeatherResult<Error>) -> Void)
+    func load(completion: @escaping (LoadWeatherResult) -> Void)
 }
