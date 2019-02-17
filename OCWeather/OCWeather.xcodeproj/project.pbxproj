@@ -18,10 +18,19 @@
 		46E2469C22198DDE0066F113 /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2469B22198DDE0066F113 /* URLSessionHTTPClientTests.swift */; };
 		46E2469F22199FB10066F113 /* XCTestCase+TrackMemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2469E22199FB10066F113 /* XCTestCase+TrackMemoryLeaks.swift */; };
 		46E246A12219B0B30066F113 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E246A02219B0B30066F113 /* URLSessionHTTPClient.swift */; };
+		46E246A92219B61F0066F113 /* OCWeatherAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E246A82219B61F0066F113 /* OCWeatherAPIEndToEndTests.swift */; };
+		46E246AB2219B61F0066F113 /* OCWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E2466F221949210066F113 /* OCWeather.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		46E2467A221949210066F113 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46E24666221949210066F113 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46E2466E221949210066F113;
+			remoteInfo = OCWeather;
+		};
+		46E246AC2219B61F0066F113 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46E24666221949210066F113 /* Project object */;
 			proxyType = 1;
@@ -45,6 +54,9 @@
 		46E2469B22198DDE0066F113 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		46E2469E22199FB10066F113 /* XCTestCase+TrackMemoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+TrackMemoryLeaks.swift"; sourceTree = "<group>"; };
 		46E246A02219B0B30066F113 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		46E246A62219B61F0066F113 /* OCWeatherAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCWeatherAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46E246A82219B61F0066F113 /* OCWeatherAPIEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCWeatherAPIEndToEndTests.swift; sourceTree = "<group>"; };
+		46E246AA2219B61F0066F113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +75,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		46E246A32219B61F0066F113 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46E246AB2219B61F0066F113 /* OCWeather.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -71,6 +91,7 @@
 			children = (
 				46E24671221949210066F113 /* OCWeather */,
 				46E2467C221949220066F113 /* OCWeatherTests */,
+				46E246A72219B61F0066F113 /* OCWeatherAPIEndToEndTests */,
 				46E24670221949210066F113 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,6 +101,7 @@
 			children = (
 				46E2466F221949210066F113 /* OCWeather.framework */,
 				46E24678221949210066F113 /* OCWeatherTests.xctest */,
+				46E246A62219B61F0066F113 /* OCWeatherAPIEndToEndTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -150,6 +172,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		46E246A72219B61F0066F113 /* OCWeatherAPIEndToEndTests */ = {
+			isa = PBXGroup;
+			children = (
+				46E246A82219B61F0066F113 /* OCWeatherAPIEndToEndTests.swift */,
+				46E246AA2219B61F0066F113 /* Info.plist */,
+			);
+			path = OCWeatherAPIEndToEndTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -199,6 +230,24 @@
 			productReference = 46E24678221949210066F113 /* OCWeatherTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		46E246A52219B61F0066F113 /* OCWeatherAPIEndToEndTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46E246AE2219B61F0066F113 /* Build configuration list for PBXNativeTarget "OCWeatherAPIEndToEndTests" */;
+			buildPhases = (
+				46E246A22219B61F0066F113 /* Sources */,
+				46E246A32219B61F0066F113 /* Frameworks */,
+				46E246A42219B61F0066F113 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46E246AD2219B61F0066F113 /* PBXTargetDependency */,
+			);
+			name = OCWeatherAPIEndToEndTests;
+			productName = OCWeatherAPIEndToEndTests;
+			productReference = 46E246A62219B61F0066F113 /* OCWeatherAPIEndToEndTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -217,6 +266,9 @@
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
 					};
+					46E246A52219B61F0066F113 = {
+						CreatedOnToolsVersion = 10.1;
+					};
 				};
 			};
 			buildConfigurationList = 46E24669221949210066F113 /* Build configuration list for PBXProject "OCWeather" */;
@@ -233,6 +285,7 @@
 			targets = (
 				46E2466E221949210066F113 /* OCWeather */,
 				46E24677221949210066F113 /* OCWeatherTests */,
+				46E246A52219B61F0066F113 /* OCWeatherAPIEndToEndTests */,
 			);
 		};
 /* End PBXProject section */
@@ -250,6 +303,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				46E24694221965D10066F113 /* weather.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46E246A42219B61F0066F113 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +339,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		46E246A22219B61F0066F113 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46E246A92219B61F0066F113 /* OCWeatherAPIEndToEndTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -286,6 +354,11 @@
 			isa = PBXTargetDependency;
 			target = 46E2466E221949210066F113 /* OCWeather */;
 			targetProxy = 46E2467A221949210066F113 /* PBXContainerItemProxy */;
+		};
+		46E246AD2219B61F0066F113 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46E2466E221949210066F113 /* OCWeather */;
+			targetProxy = 46E246AC2219B61F0066F113 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -507,6 +580,42 @@
 			};
 			name = Release;
 		};
+		46E246AF2219B61F0066F113 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 78BZCUCGN3;
+				INFOPLIST_FILE = OCWeatherAPIEndToEndTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.christophebugnon.OCWeatherAPIEndToEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		46E246B02219B61F0066F113 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 78BZCUCGN3;
+				INFOPLIST_FILE = OCWeatherAPIEndToEndTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.christophebugnon.OCWeatherAPIEndToEndTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -533,6 +642,15 @@
 			buildConfigurations = (
 				46E24687221949220066F113 /* Debug */,
 				46E24688221949220066F113 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46E246AE2219B61F0066F113 /* Build configuration list for PBXNativeTarget "OCWeatherAPIEndToEndTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46E246AF2219B61F0066F113 /* Debug */,
+				46E246B02219B61F0066F113 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
