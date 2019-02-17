@@ -39,7 +39,7 @@ class RemoteWeatherLoaderTests: XCTestCase {
     func test_load_deliversErrorOnClientError() {
         let (sut, client) = makeSUT()
 
-        expect(sut: sut, toCompleteWithError: .connectivity, when: {
+        expect(sut: sut, toCompleteWithResult: .failure(.connectivity), when: {
             let clientError = NSError(domain: "test", code: 0)
             client.complete(with: clientError)
         })
@@ -51,7 +51,7 @@ class RemoteWeatherLoaderTests: XCTestCase {
         let samples = [199, 201, 300, 400, 500]
 
         samples.enumerated().forEach { index, code in
-            expect(sut: sut, toCompleteWithError: .invalidData, when: {
+            expect(sut: sut, toCompleteWithResult: .failure(.invalidData), when: {
                 let invalidJSON = Data(bytes: "invalid json".utf8)
                 client.complete(withStatusCode: code, data: invalidJSON, at: index)
             })
@@ -61,11 +61,24 @@ class RemoteWeatherLoaderTests: XCTestCase {
     func test_load_deliversErrorOn200HTTPResponseWithInvalidJSON() {
         let (sut, client) = makeSUT()
 
-        expect(sut: sut, toCompleteWithError: .invalidData, when: {
+        expect(sut: sut, toCompleteWithResult: .failure(.invalidData), when: {
             let invalidJSON = Data(bytes: "invalid json".utf8)
             client.complete(withStatusCode: 200, data: invalidJSON)
         })
     }
+
+        func test_load_deliversItemOn200HTTPResponseWithJSONItem() {
+            let (sut, client) = makeSUT()
+
+            let item = WeatherItem(name: "a name", date: "02-16-2019 19:00", weather: "a weather", description: "a description", temperature: 2.0, wind: 3.0)
+
+            expect(sut: sut, toCompleteWithResult: .success(item), when: {
+                let filePath = Bundle(for: type(of: self)).url(forResource: "weather", withExtension: "json")!
+                let data = try! Data(contentsOf: filePath)
+
+                client.complete(withStatusCode: 200, data: data)
+            })
+        }
 
     // MARK: - Helpers
 
@@ -75,13 +88,13 @@ class RemoteWeatherLoaderTests: XCTestCase {
         return (sut, client)
     }
 
-    private func expect(sut: RemoteWeatherLoader, toCompleteWithError error: RemoteWeatherLoader.Error, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
+    private func expect(sut: RemoteWeatherLoader, toCompleteWithResult result: RemoteWeatherLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
         var capturedResults = [RemoteWeatherLoader.Result]()
         sut.load { capturedResults.append($0) }
 
         action()
 
-        XCTAssertEqual(capturedResults, [.failure(error)], file: file, line: line)
+        XCTAssertEqual(capturedResults, [result], file: file, line: line)
     }
 
     class HTTPClientSpy: HTTPClient {
