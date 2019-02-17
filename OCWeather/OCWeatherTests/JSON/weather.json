@@ -1,8 +1,8 @@
 {
     "name": "a name",
-    "dt": 1,
+    "dt": 1550340000,
     "weather": [{
-        "main": "a main",
+        "main": "a weather",
         "description": "a description"
     }],
     "wind": {
