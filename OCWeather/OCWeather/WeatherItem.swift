@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+struct WeatherItem {
+    let name: String
+    let date: Int
+    let weather: String
+    let description: String
+    let temperature: Double
+    let wind: Double
+}
