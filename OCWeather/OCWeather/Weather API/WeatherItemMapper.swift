@@ -20,14 +20,8 @@ internal final class WeatherItemMapper: Decodable {
     var description: String {
         return weather.map { $0.description }.first!
     }
-    var formattedDate: String {
-        let date = Date(timeIntervalSince1970: TimeInterval(self.date))
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM-dd-yyyy HH:mm"
-        return dateFormatter.string(from: date)
-    }
     var weatherItem: WeatherItem {
-        return WeatherItem(name: name, date: formattedDate, weather: outsideWeather, description: description, temperature: temperature, wind: wind)
+        return WeatherItem(name: name, date: date, weather: outsideWeather, description: description, temperature: temperature, wind: wind)
     }
 
     struct Weather: Decodable {

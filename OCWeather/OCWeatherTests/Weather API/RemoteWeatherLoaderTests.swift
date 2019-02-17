@@ -70,7 +70,7 @@ class RemoteWeatherLoaderTests: XCTestCase {
     func test_load_deliversItemOn200HTTPResponseWithJSONItem() {
         let (sut, client) = makeSUT()
 
-        let item = makeItem(name: "a name", date: "02-16-2019 19:00", weather: "a weather", description: "a description", temperature: 2.0, wind: 3.0)
+        let item = makeItem(name: "a name", date: 1550340000, weather: "a weather", description: "a description", temperature: 2.0, wind: 3.0)
 
         expect(sut: sut, toCompleteWith: .success(item.model), when: {
             client.complete(withStatusCode: 200, data: makeJSON(valid: true))
@@ -107,7 +107,7 @@ class RemoteWeatherLoaderTests: XCTestCase {
         return .failure(error)
     }
 
-    fileprivate func makeItem(name: String, date: String, weather: String, description: String, temperature: Double, wind: Double) -> (model: WeatherItem, json: Data) {
+    fileprivate func makeItem(name: String, date: Int, weather: String, description: String, temperature: Double, wind: Double) -> (model: WeatherItem, json: Data) {
         let item = WeatherItem(name: name, date: date, weather: weather, description: description, temperature: temperature, wind: wind)
         let json = makeJSON(valid: true)
 
