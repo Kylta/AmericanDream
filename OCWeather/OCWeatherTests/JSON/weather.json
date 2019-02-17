@@ -1,0 +1,14 @@
+{
+    "name": "a name",
+    "dt": 1,
+    "weather": [{
+        "main": "a main",
+        "description": "a description"
+    }],
+    "wind": {
+        "speed": 3.0
+    },
+    "main": {
+        "temp": 2.0
+    }
+}
