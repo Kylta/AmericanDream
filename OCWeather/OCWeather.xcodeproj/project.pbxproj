@@ -11,6 +11,7 @@
 		46E2468A221949E80066F113 /* WeatherItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E24689221949E80066F113 /* WeatherItem.swift */; };
 		46E2468C22194B6C0066F113 /* RemoteWeatherLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2468B22194B6C0066F113 /* RemoteWeatherLoaderTests.swift */; };
 		46E2468E22194C680066F113 /* WeatherLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2468D22194C680066F113 /* WeatherLoader.swift */; };
+		46E24691221950390066F113 /* RemoteWeatherLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E24690221950390066F113 /* RemoteWeatherLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		46E24689221949E80066F113 /* WeatherItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItem.swift; sourceTree = "<group>"; };
 		46E2468B22194B6C0066F113 /* RemoteWeatherLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteWeatherLoaderTests.swift; sourceTree = "<group>"; };
 		46E2468D22194C680066F113 /* WeatherLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLoader.swift; sourceTree = "<group>"; };
+		46E24690221950390066F113 /* RemoteWeatherLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteWeatherLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			children = (
 				46E24673221949210066F113 /* Info.plist */,
 				46E2468F22194CDA0066F113 /* Weather Feature */,
+				46E246922219503D0066F113 /* Weather API */,
 			);
 			path = OCWeather;
 			sourceTree = "<group>";
@@ -95,6 +98,14 @@
 				46E2468D22194C680066F113 /* WeatherLoader.swift */,
 			);
 			path = "Weather Feature";
+			sourceTree = "<group>";
+		};
+		46E246922219503D0066F113 /* Weather API */ = {
+			isa = PBXGroup;
+			children = (
+				46E24690221950390066F113 /* RemoteWeatherLoader.swift */,
+			);
+			path = "Weather API";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +219,7 @@
 			files = (
 				46E2468A221949E80066F113 /* WeatherItem.swift in Sources */,
 				46E2468E22194C680066F113 /* WeatherLoader.swift in Sources */,
+				46E24691221950390066F113 /* RemoteWeatherLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
