@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum LoaderWeatherResult {
+enum LoadWeatherResult {
     case success(WeatherItem)
     case error(Error)
 }
