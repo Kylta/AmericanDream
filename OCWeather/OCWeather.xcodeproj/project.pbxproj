@@ -14,6 +14,7 @@
 		46E24691221950390066F113 /* RemoteWeatherLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E24690221950390066F113 /* RemoteWeatherLoader.swift */; };
 		46E24694221965D10066F113 /* weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 46E24693221965D10066F113 /* weather.json */; };
 		46E2469722196F5A0066F113 /* WeatherItemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2469622196F5A0066F113 /* WeatherItemMapper.swift */; };
+		46E24699221977930066F113 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E24698221977930066F113 /* HTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		46E24690221950390066F113 /* RemoteWeatherLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteWeatherLoader.swift; sourceTree = "<group>"; };
 		46E24693221965D10066F113 /* weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = weather.json; sourceTree = "<group>"; };
 		46E2469622196F5A0066F113 /* WeatherItemMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherItemMapper.swift; sourceTree = "<group>"; };
+		46E24698221977930066F113 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			children = (
 				46E24690221950390066F113 /* RemoteWeatherLoader.swift */,
 				46E2469622196F5A0066F113 /* WeatherItemMapper.swift */,
+				46E24698221977930066F113 /* HTTPClient.swift */,
 			);
 			path = "Weather API";
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46E2468A221949E80066F113 /* WeatherItem.swift in Sources */,
+				46E24699221977930066F113 /* HTTPClient.swift in Sources */,
 				46E2468E22194C680066F113 /* WeatherLoader.swift in Sources */,
 				46E2469722196F5A0066F113 /* WeatherItemMapper.swift in Sources */,
 				46E24691221950390066F113 /* RemoteWeatherLoader.swift in Sources */,
