@@ -2,7 +2,7 @@
     "name": "a name",
     "dt": 1,
     "weather": [{
-        "main": "a main",
+        "main": "a weather",
         "description": "a description"
     }],
     "wind": {
