@@ -107,12 +107,6 @@ class RemoteWeatherLoaderTests: XCTestCase {
         return .failure(error)
     }
 
-    fileprivate func trackMemoryLeaks(instance: AnyObject, file: StaticString = #file, line: UInt = #line) {
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(instance, "Instance should have been deallocated. Potential memory leak.", file: file, line: line)
-        }
-    }
-
     fileprivate func makeItem(name: String, date: String, weather: String, description: String, temperature: Double, wind: Double) -> (model: WeatherItem, json: Data) {
         let item = WeatherItem(name: name, date: date, weather: weather, description: description, temperature: temperature, wind: wind)
         let json = makeJSON(valid: true)
