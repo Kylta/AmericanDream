@@ -26,31 +26,36 @@ protocol HTTPClient {
     func get(from url: URL)
 }
 
-class HTTPClientSpy: HTTPClient {
-    var requestedURL: URL?
-
-    func get(from url: URL) {
-        requestedURL = url
-    }
-}
-
 class RemoteWeatherLoaderTests: XCTestCase {
 
     func test_init_doesNotRequestDataFromURL() {
-        let client = HTTPClientSpy()
-        let url = URL(string: "http://a-url.com")!
-        _ = RemoteWeatherLoader(client: client, url: url)
+        let (_, client) = makeSUT()
 
         XCTAssertNil(client.requestedURL)
     }
 
     func test_load_requestDataFromURL() {
-        let client = HTTPClientSpy()
         let url = URL(string: "http://a-given-url.com")!
-        let sut = RemoteWeatherLoader(client: client, url: url)
+        let (sut, client) = makeSUT(url: url)
 
         sut.load()
 
         XCTAssertEqual(client.requestedURL, url)
+    }
+
+    // MARK: - Helpers
+
+    private func makeSUT(url: URL = URL(string: "http://a-url.com")!) -> (sut: RemoteWeatherLoader, client: HTTPClientSpy) {
+        let client = HTTPClientSpy()
+        let sut = RemoteWeatherLoader(client: client, url: url)
+        return (sut, client)
+    }
+
+    class HTTPClientSpy: HTTPClient {
+        var requestedURL: URL?
+
+        func get(from url: URL) {
+            requestedURL = url
+        }
     }
 }
