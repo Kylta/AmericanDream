@@ -99,11 +99,12 @@ Then the app should display an error message
 
 | Property		| Type 		|
 |---------------	|------------	|
-| `location`		| `String`	|
-| `temperature`	| `String`	|
-| `wind`			| `String`	|
-| `weather`     | `String`    |
-| `code`        | `String`    |
+| `name`		| `String`	|
+| `dt`	| `Int`	|
+| `wind`			| `Double`	|
+| `temperature`    | `Double`    |
+| `weather`        | `String`    |
+| `description`        | `String`    |
 
 ### Payload contract
 
@@ -113,13 +114,16 @@ GET *url*
 200 RESPONSE
 
 {
-	"items": [
-		{
-			"location": "a location"
-			"temperature": "a temperature"
-			"wind": "a wind"
-            "weather": "sunny"
-            "code": 2
-		}
-	]
+"name": "Paris",
+"dt": 132123123,
+"main": {
+"temp": 1.0
+},
+"weather": [{
+"main": "Clear",
+"description": "clear sky"
+}],
+"wind": {
+"speed": 2.0
+}
 }
