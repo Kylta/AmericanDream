@@ -22,6 +22,8 @@ class OCWeatherAPIEndToEndTests: XCTestCase {
         }
     }
 
+    // MARK: - Helpers
+
     private func getWeatherResult() -> LoadWeatherResult? {
         let client = URLSessionHTTPClient()
         let testServerURL = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=Paris,fr&units=metric&APPID=f33ca45f1e944339541f316aef6cda60")!
