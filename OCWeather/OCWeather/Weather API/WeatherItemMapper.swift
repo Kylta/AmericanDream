@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal struct WeatherItemMapper: Decodable {
+internal final class WeatherItemMapper: Decodable {
     let name: String
     let date: Int
     let weather: [Weather]
