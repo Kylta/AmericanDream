@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "46E2466E221949210066F113"
-               BuildableName = "OCExchangeAPI.framework"
-               BlueprintName = "OCExchangeAPI"
-               ReferencedContainer = "container:OCExchangeAPI.xcodeproj">
+               BuildableName = "OCExchange.framework"
+               BlueprintName = "OCExchange"
+               ReferencedContainer = "container:OCExchange.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "46E2466E221949210066F113"
-            BuildableName = "OCExchangeAPI.framework"
-            BlueprintName = "OCExchangeAPI"
-            ReferencedContainer = "container:OCExchangeAPI.xcodeproj">
+            BuildableName = "OCExchange.framework"
+            BlueprintName = "OCExchange"
+            ReferencedContainer = "container:OCExchange.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -45,9 +45,20 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "46E24677221949210066F113"
-               BuildableName = "OCExchangeAPITests.xctest"
-               BlueprintName = "OCExchangeAPITests"
-               ReferencedContainer = "container:OCExchangeAPI.xcodeproj">
+               BuildableName = "OCExchangeTests.xctest"
+               BlueprintName = "OCExchangeTests"
+               ReferencedContainer = "container:OCExchange.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "46E246A52219B61F0066F113"
+               BuildableName = "OCExchangeAPIEndToEndTests.xctest"
+               BlueprintName = "OCExchangeAPIEndToEndTests"
+               ReferencedContainer = "container:OCExchange.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "46E2466E221949210066F113"
-            BuildableName = "OCExchangeAPI.framework"
-            BlueprintName = "OCExchangeAPI"
-            ReferencedContainer = "container:OCExchangeAPI.xcodeproj">
+            BuildableName = "OCExchange.framework"
+            BlueprintName = "OCExchange"
+            ReferencedContainer = "container:OCExchange.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -77,9 +88,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "46E2466E221949210066F113"
-            BuildableName = "OCExchangeAPI.framework"
-            BlueprintName = "OCExchangeAPI"
-            ReferencedContainer = "container:OCExchangeAPI.xcodeproj">
+            BuildableName = "OCExchange.framework"
+            BlueprintName = "OCExchange"
+            ReferencedContainer = "container:OCExchange.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -95,9 +106,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "46E2466E221949210066F113"
-            BuildableName = "OCExchangeAPI.framework"
-            BlueprintName = "OCExchangeAPI"
-            ReferencedContainer = "container:OCExchangeAPI.xcodeproj">
+            BuildableName = "OCExchange.framework"
+            BlueprintName = "OCExchange"
+            ReferencedContainer = "container:OCExchange.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

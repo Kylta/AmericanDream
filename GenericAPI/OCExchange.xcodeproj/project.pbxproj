@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		46E24679221949210066F113 /* OCExchangeAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E2466F221949210066F113 /* OCExchangeAPI.framework */; };
+		46E24679221949210066F113 /* OCExchange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E2466F221949210066F113 /* OCExchange.framework */; };
 		46E2468A221949E80066F113 /* ExchangeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E24689221949E80066F113 /* ExchangeItem.swift */; };
 		46E2468C22194B6C0066F113 /* RemoteExchangeLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2468B22194B6C0066F113 /* RemoteExchangeLoaderTests.swift */; };
 		46E2468E22194C680066F113 /* GenericLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2468D22194C680066F113 /* GenericLoader.swift */; };
@@ -18,7 +18,7 @@
 		46E2469F22199FB10066F113 /* XCTestCase+TrackMemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2469E22199FB10066F113 /* XCTestCase+TrackMemoryLeaks.swift */; };
 		46E246A12219B0B30066F113 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E246A02219B0B30066F113 /* URLSessionHTTPClient.swift */; };
 		46E246A92219B61F0066F113 /* GenericAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E246A82219B61F0066F113 /* GenericAPIEndToEndTests.swift */; };
-		46E246AB2219B61F0066F113 /* OCExchangeAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E2466F221949210066F113 /* OCExchangeAPI.framework */; };
+		46E246AB2219B61F0066F113 /* OCExchange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E2466F221949210066F113 /* OCExchange.framework */; };
 		46E246B42219C0840066F113 /* XCTestCase+TrackMemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2469E22199FB10066F113 /* XCTestCase+TrackMemoryLeaks.swift */; };
 		46E246B72219D1AE0066F113 /* genericModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 46E246B62219D1AE0066F113 /* genericModel.json */; };
 /* End PBXBuildFile section */
@@ -41,9 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		46E2466F221949210066F113 /* OCExchangeAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OCExchangeAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46E2466F221949210066F113 /* OCExchange.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OCExchange.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E24673221949210066F113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		46E24678221949210066F113 /* OCExchangeAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCExchangeAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46E24678221949210066F113 /* OCExchangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCExchangeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E2467F221949220066F113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46E24689221949E80066F113 /* ExchangeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeItem.swift; sourceTree = "<group>"; };
 		46E2468B22194B6C0066F113 /* RemoteExchangeLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteExchangeLoaderTests.swift; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		46E2469B22198DDE0066F113 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		46E2469E22199FB10066F113 /* XCTestCase+TrackMemoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+TrackMemoryLeaks.swift"; sourceTree = "<group>"; };
 		46E246A02219B0B30066F113 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
-		46E246A62219B61F0066F113 /* OCExchangeAPIAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCExchangeAPIAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46E246A62219B61F0066F113 /* OCExchangeAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCExchangeAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E246A82219B61F0066F113 /* GenericAPIEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericAPIEndToEndTests.swift; sourceTree = "<group>"; };
 		46E246AA2219B61F0066F113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46E246B62219D1AE0066F113 /* genericModel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = genericModel.json; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46E24679221949210066F113 /* OCExchangeAPI.framework in Frameworks */,
+				46E24679221949210066F113 /* OCExchange.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46E246AB2219B61F0066F113 /* OCExchangeAPI.framework in Frameworks */,
+				46E246AB2219B61F0066F113 /* OCExchange.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,9 +100,9 @@
 		46E24670221949210066F113 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				46E2466F221949210066F113 /* OCExchangeAPI.framework */,
-				46E24678221949210066F113 /* OCExchangeAPITests.xctest */,
-				46E246A62219B61F0066F113 /* OCExchangeAPIAPIEndToEndTests.xctest */,
+				46E2466F221949210066F113 /* OCExchange.framework */,
+				46E24678221949210066F113 /* OCExchangeTests.xctest */,
+				46E246A62219B61F0066F113 /* OCExchangeAPIEndToEndTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -195,9 +195,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		46E2466E221949210066F113 /* OCExchangeAPI */ = {
+		46E2466E221949210066F113 /* OCExchange */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46E24683221949220066F113 /* Build configuration list for PBXNativeTarget "OCExchangeAPI" */;
+			buildConfigurationList = 46E24683221949220066F113 /* Build configuration list for PBXNativeTarget "OCExchange" */;
 			buildPhases = (
 				46E2466A221949210066F113 /* Headers */,
 				46E2466B221949210066F113 /* Sources */,
@@ -208,14 +208,14 @@
 			);
 			dependencies = (
 			);
-			name = OCExchangeAPI;
+			name = OCExchange;
 			productName = OCWeather;
-			productReference = 46E2466F221949210066F113 /* OCExchangeAPI.framework */;
+			productReference = 46E2466F221949210066F113 /* OCExchange.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		46E24677221949210066F113 /* OCExchangeAPITests */ = {
+		46E24677221949210066F113 /* OCExchangeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46E24686221949220066F113 /* Build configuration list for PBXNativeTarget "OCExchangeAPITests" */;
+			buildConfigurationList = 46E24686221949220066F113 /* Build configuration list for PBXNativeTarget "OCExchangeTests" */;
 			buildPhases = (
 				46E24674221949210066F113 /* Sources */,
 				46E24675221949210066F113 /* Frameworks */,
@@ -226,14 +226,14 @@
 			dependencies = (
 				46E2467B221949210066F113 /* PBXTargetDependency */,
 			);
-			name = OCExchangeAPITests;
+			name = OCExchangeTests;
 			productName = OCWeatherTests;
-			productReference = 46E24678221949210066F113 /* OCExchangeAPITests.xctest */;
+			productReference = 46E24678221949210066F113 /* OCExchangeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		46E246A52219B61F0066F113 /* OCExchangeAPIAPIEndToEndTests */ = {
+		46E246A52219B61F0066F113 /* OCExchangeAPIEndToEndTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46E246AE2219B61F0066F113 /* Build configuration list for PBXNativeTarget "OCExchangeAPIAPIEndToEndTests" */;
+			buildConfigurationList = 46E246AE2219B61F0066F113 /* Build configuration list for PBXNativeTarget "OCExchangeAPIEndToEndTests" */;
 			buildPhases = (
 				46E246A22219B61F0066F113 /* Sources */,
 				46E246A32219B61F0066F113 /* Frameworks */,
@@ -244,9 +244,9 @@
 			dependencies = (
 				46E246AD2219B61F0066F113 /* PBXTargetDependency */,
 			);
-			name = OCExchangeAPIAPIEndToEndTests;
+			name = OCExchangeAPIEndToEndTests;
 			productName = OCWeatherAPIEndToEndTests;
-			productReference = 46E246A62219B61F0066F113 /* OCExchangeAPIAPIEndToEndTests.xctest */;
+			productReference = 46E246A62219B61F0066F113 /* OCExchangeAPIEndToEndTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -272,7 +272,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 46E24669221949210066F113 /* Build configuration list for PBXProject "OCExchangeAPI" */;
+			buildConfigurationList = 46E24669221949210066F113 /* Build configuration list for PBXProject "OCExchange" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -284,9 +284,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				46E2466E221949210066F113 /* OCExchangeAPI */,
-				46E24677221949210066F113 /* OCExchangeAPITests */,
-				46E246A52219B61F0066F113 /* OCExchangeAPIAPIEndToEndTests */,
+				46E2466E221949210066F113 /* OCExchange */,
+				46E24677221949210066F113 /* OCExchangeTests */,
+				46E246A52219B61F0066F113 /* OCExchangeAPIEndToEndTests */,
 			);
 		};
 /* End PBXProject section */
@@ -354,12 +354,12 @@
 /* Begin PBXTargetDependency section */
 		46E2467B221949210066F113 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 46E2466E221949210066F113 /* OCExchangeAPI */;
+			target = 46E2466E221949210066F113 /* OCExchange */;
 			targetProxy = 46E2467A221949210066F113 /* PBXContainerItemProxy */;
 		};
 		46E246AD2219B61F0066F113 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 46E2466E221949210066F113 /* OCExchangeAPI */;
+			target = 46E2466E221949210066F113 /* OCExchange */;
 			targetProxy = 46E246AC2219B61F0066F113 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -621,7 +621,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		46E24669221949210066F113 /* Build configuration list for PBXProject "OCExchangeAPI" */ = {
+		46E24669221949210066F113 /* Build configuration list for PBXProject "OCExchange" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46E24681221949220066F113 /* Debug */,
@@ -630,7 +630,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46E24683221949220066F113 /* Build configuration list for PBXNativeTarget "OCExchangeAPI" */ = {
+		46E24683221949220066F113 /* Build configuration list for PBXNativeTarget "OCExchange" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46E24684221949220066F113 /* Debug */,
@@ -639,7 +639,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46E24686221949220066F113 /* Build configuration list for PBXNativeTarget "OCExchangeAPITests" */ = {
+		46E24686221949220066F113 /* Build configuration list for PBXNativeTarget "OCExchangeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46E24687221949220066F113 /* Debug */,
@@ -648,7 +648,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46E246AE2219B61F0066F113 /* Build configuration list for PBXNativeTarget "OCExchangeAPIAPIEndToEndTests" */ = {
+		46E246AE2219B61F0066F113 /* Build configuration list for PBXNativeTarget "OCExchangeAPIEndToEndTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46E246AF2219B61F0066F113 /* Debug */,

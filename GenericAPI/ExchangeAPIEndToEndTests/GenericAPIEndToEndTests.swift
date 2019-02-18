@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import OCExchangeAPI
+import OCExchange
 
 class ExchangeAPIEndToEndTests: XCTestCase {
 
