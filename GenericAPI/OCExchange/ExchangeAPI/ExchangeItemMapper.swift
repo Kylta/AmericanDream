@@ -1,6 +1,6 @@
 //
 //  GenericItemMapper.swift
-//  OCWeather
+//  OCExchange
 //
 //  Created by Christophe Bugnon on 17/02/2019.
 //  Copyright © 2019 Christophe Bugnon. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal final class GenericItemMapper: Codable {
+internal final class ExchangeItemMapper: Codable {
 
     var genericItem: GenericModel {
         return GenericModel()
@@ -18,10 +18,10 @@ internal final class GenericItemMapper: Codable {
         return 200
     }
 
-    internal static func map(_ data: Data, _ response: HTTPURLResponse) -> RemoteGenericLoader.Result {
+    internal static func map(_ data: Data, _ response: HTTPURLResponse) -> RemoteExchangeLoader.Result {
         guard response.statusCode == OK_200,
-            let genericItemMapper = try? JSONDecoder().decode(GenericItemMapper.self, from: data) else {
-                return .failure(RemoteGenericLoader.Error.invalidData)
+            let genericItemMapper = try? JSONDecoder().decode(ExchangeItemMapper.self, from: data) else {
+                return .failure(RemoteExchangeLoader.Error.invalidData)
         }
 
         return .success(genericItemMapper.genericItem)

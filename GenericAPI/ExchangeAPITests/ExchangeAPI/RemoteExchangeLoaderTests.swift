@@ -1,15 +1,15 @@
 //
-//  RemoteWeatherLoaderTests.swift
-//  OCWeatherTests
+//  RemoteExchangeLoaderTests.swift
+//  OCExchangeTests
 //
 //  Created by Christophe Bugnon on 17/02/2019.
 //  Copyright © 2019 Christophe Bugnon. All rights reserved.
 //
 
 import XCTest
-import GenericAPI
+import OCExchangeAPI
 
-class RemoteWeatherLoaderTests: XCTestCase {
+class RemoteExchangeLoaderTests: XCTestCase {
 
     func test_init_doesNotRequestDataFromURL() {
         let (_, client) = makeSUT()
@@ -79,9 +79,9 @@ class RemoteWeatherLoaderTests: XCTestCase {
 
     func test_load_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
         let client = HTTPClientSpy()
-        var sut: RemoteGenericLoader? = RemoteGenericLoader(client: client, url: anyURL())
+        var sut: RemoteExchangeLoader? = RemoteExchangeLoader(client: client, url: anyURL())
 
-        var capturedResults = [RemoteGenericLoader.Result]()
+        var capturedResults = [RemoteExchangeLoader.Result]()
         sut?.load { capturedResults.append($0) }
 
         sut = nil
@@ -93,9 +93,9 @@ class RemoteWeatherLoaderTests: XCTestCase {
 
     // MARK: - Helpers
 
-    private func makeSUT(url: URL = URL(string: "http://a-url.com")!, file: StaticString = #file, line: UInt = #line) -> (sut: RemoteGenericLoader, client: HTTPClientSpy) {
+    private func makeSUT(url: URL = URL(string: "http://a-url.com")!, file: StaticString = #file, line: UInt = #line) -> (sut: RemoteExchangeLoader, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
-        let sut = RemoteGenericLoader(client: client, url: url)
+        let sut = RemoteExchangeLoader(client: client, url: url)
 
         trackMemoryLeaks(instance: client, file: file, line: line)
         trackMemoryLeaks(instance: sut, file: file, line: line)
@@ -103,7 +103,7 @@ class RemoteWeatherLoaderTests: XCTestCase {
         return (sut, client)
     }
 
-    fileprivate func failure(_ error: RemoteGenericLoader.Error) -> RemoteGenericLoader.Result {
+    fileprivate func failure(_ error: RemoteExchangeLoader.Error) -> RemoteExchangeLoader.Result {
         return .failure(error)
     }
 
@@ -126,7 +126,7 @@ class RemoteWeatherLoaderTests: XCTestCase {
         return URL(string: "https://any-url.com")!
     }
 
-    private func expect(sut: RemoteGenericLoader, toCompleteWith expectedResult: RemoteGenericLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
+    private func expect(sut: RemoteExchangeLoader, toCompleteWith expectedResult: RemoteExchangeLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
 
         let exp = expectation(description: "Wait for completion")
 
@@ -134,7 +134,7 @@ class RemoteWeatherLoaderTests: XCTestCase {
             switch (receivedResult, expectedResult) {
             case let (.success(receivedItem), .success(expectedItem)):
                 XCTAssertEqual(receivedItem, expectedItem, file: file, line: line)
-            case let (.failure(receivedError as RemoteGenericLoader.Error), .failure(expectedError as RemoteGenericLoader.Error)):
+            case let (.failure(receivedError as RemoteExchangeLoader.Error), .failure(expectedError as RemoteExchangeLoader.Error)):
                 XCTAssertEqual(receivedError, expectedError, file: file, line: line)
             default:
                 XCTFail("Expected result \(expectedResult), got \(receivedResult) instead", file: file, line: line)

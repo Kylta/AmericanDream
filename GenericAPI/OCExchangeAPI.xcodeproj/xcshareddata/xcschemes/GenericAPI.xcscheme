@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "46E2466E221949210066F113"
-               BuildableName = "GenericAPI.framework"
-               BlueprintName = "GenericAPI"
-               ReferencedContainer = "container:GenericAPI.xcodeproj">
+               BuildableName = "OCExchangeAPI.framework"
+               BlueprintName = "OCExchangeAPI"
+               ReferencedContainer = "container:OCExchangeAPI.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "46E2466E221949210066F113"
-            BuildableName = "GenericAPI.framework"
-            BlueprintName = "GenericAPI"
-            ReferencedContainer = "container:GenericAPI.xcodeproj">
+            BuildableName = "OCExchangeAPI.framework"
+            BlueprintName = "OCExchangeAPI"
+            ReferencedContainer = "container:OCExchangeAPI.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -45,20 +45,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "46E24677221949210066F113"
-               BuildableName = "GenericAPITests.xctest"
-               BlueprintName = "GenericAPITests"
-               ReferencedContainer = "container:GenericAPI.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            testExecutionOrdering = "random">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "46E246A52219B61F0066F113"
-               BuildableName = "GenericAPIAPIEndToEndTests.xctest"
-               BlueprintName = "GenericAPIAPIEndToEndTests"
-               ReferencedContainer = "container:GenericAPI.xcodeproj">
+               BuildableName = "OCExchangeAPITests.xctest"
+               BlueprintName = "OCExchangeAPITests"
+               ReferencedContainer = "container:OCExchangeAPI.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -66,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "46E2466E221949210066F113"
-            BuildableName = "GenericAPI.framework"
-            BlueprintName = "GenericAPI"
-            ReferencedContainer = "container:GenericAPI.xcodeproj">
+            BuildableName = "OCExchangeAPI.framework"
+            BlueprintName = "OCExchangeAPI"
+            ReferencedContainer = "container:OCExchangeAPI.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -88,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "46E2466E221949210066F113"
-            BuildableName = "GenericAPI.framework"
-            BlueprintName = "GenericAPI"
-            ReferencedContainer = "container:GenericAPI.xcodeproj">
+            BuildableName = "OCExchangeAPI.framework"
+            BlueprintName = "OCExchangeAPI"
+            ReferencedContainer = "container:OCExchangeAPI.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -106,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "46E2466E221949210066F113"
-            BuildableName = "GenericAPI.framework"
-            BlueprintName = "GenericAPI"
-            ReferencedContainer = "container:GenericAPI.xcodeproj">
+            BuildableName = "OCExchangeAPI.framework"
+            BlueprintName = "OCExchangeAPI"
+            ReferencedContainer = "container:OCExchangeAPI.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

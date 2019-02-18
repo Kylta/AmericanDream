@@ -1,13 +1,13 @@
 //
 //  URLSessionHTTPClientTests.swift
-//  OCWeatherTests
+//  OCExchangeTests
 //
 //  Created by Christophe Bugnon on 17/02/2019.
 //  Copyright © 2019 Christophe Bugnon. All rights reserved.
 //
 
 import XCTest
-import GenericAPI
+import OCExchangeAPI
 
 class URLSessionHTTPClientTests: XCTestCase {
 

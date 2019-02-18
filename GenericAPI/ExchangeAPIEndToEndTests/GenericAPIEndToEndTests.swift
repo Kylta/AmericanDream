@@ -1,15 +1,15 @@
 //
-//  GenericAPIEndToEndTests.swift
-//  GenericAPIEndToEndTests
+//  ExchangeAPIEndToEndTests.swift
+//  ExchangeAPIEndToEndTests
 //
 //  Created by Christophe Bugnon on 17/02/2019.
 //  Copyright © 2019 Christophe Bugnon. All rights reserved.
 //
 
 import XCTest
-import GenericAPI
+import OCExchangeAPI
 
-class GenericAPIEndToEndTests: XCTestCase {
+class ExchangeAPIEndToEndTests: XCTestCase {
 
     func test_endToEndTestServerGETWeatherResult_matchesFixedTestAccountData() {
         switch getWeatherResult() {

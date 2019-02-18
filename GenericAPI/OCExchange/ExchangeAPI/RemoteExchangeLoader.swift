@@ -1,6 +1,6 @@
 //
 //  RemoteWeatherLoader.swift
-//  OCWeather
+//  OCExchange
 //
 //  Created by Christophe Bugnon on 17/02/2019.
 //  Copyright © 2019 Christophe Bugnon. All rights reserved.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class RemoteGenericLoader: GenericLoader {
+public final class RemoteExchangeLoader: GenericLoader {
     private let client: HTTPClient
     private let url: URL
 
@@ -30,9 +30,9 @@ public final class RemoteGenericLoader: GenericLoader {
             
             switch result {
             case let .success(data, response):
-                completion(GenericItemMapper.map(data, response))
+                completion(ExchangeItemMapper.map(data, response))
             case .failure:
-                completion(.failure(RemoteGenericLoader.Error.connectivity))
+                completion(.failure(RemoteExchangeLoader.Error.connectivity))
             }
         }
     }
