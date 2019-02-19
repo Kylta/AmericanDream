@@ -70,7 +70,10 @@ class RemoteExchangeLoaderTests: XCTestCase {
     func test_load_deliversItemOn200HTTPResponseWithJSONItem() {
         let (sut, client) = makeSUT()
 
-        let item = makeItem()
+        let item = makeItem(date: "2019-02-18",
+                            base: "EUR",
+                            timestamp: 1550517245,
+                            currency: ["GBP": 0.87, "CAD": 1.49, "AUD": 1.58, "JPY": 125.07, "CNY": 7.65, "INR": 80.75, "SGD": 1.53, "BRL": 4.21, "IDR": 15981.74, "VND": 26236.82, "MXN": 21.76])
 
         expect(sut: sut, toCompleteWith: .success(item.model), when: {
             client.complete(withStatusCode: 200, data: makeJSON(valid: true))
@@ -107,8 +110,8 @@ class RemoteExchangeLoaderTests: XCTestCase {
         return .failure(error)
     }
 
-    fileprivate func makeItem() -> (model: GenericModel, json: Data) {
-        let item = GenericModel()
+    fileprivate func makeItem(date: String, base: String, timestamp: Int, currency: [String: Double]) -> (model: ExchangeModel, json: Data) {
+        let item = ExchangeModel(timestamp: timestamp, date: date, base: base, currency: currency)
         let json = makeJSON(valid: true)
 
         return (item, json)

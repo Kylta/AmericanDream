@@ -14,5 +14,5 @@ public enum LoadGenericResult<U> {
 }
 
 public protocol GenericLoader {
-    func load(completion: @escaping (LoadGenericResult<GenericModel>) -> Void)
+    func load(completion: @escaping (LoadGenericResult<ExchangeModel>) -> Void)
 }

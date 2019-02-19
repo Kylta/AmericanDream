@@ -1,5 +1,5 @@
 //
-//  RemoteWeatherLoader.swift
+//  RemoteExchangeLoader.swift
 //  OCExchange
 //
 //  Created by Christophe Bugnon on 17/02/2019.
@@ -22,7 +22,7 @@ public final class RemoteExchangeLoader: GenericLoader {
         case invalidData
     }
 
-    public typealias Result = LoadGenericResult<GenericModel>
+    public typealias Result = LoadGenericResult<ExchangeModel>
 
     public func load(completion: @escaping (Result) -> Void) {
         client.get(from: url) { [weak self] result in

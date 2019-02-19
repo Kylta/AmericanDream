@@ -506,7 +506,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.christophebugnon.OCWeather;
+				PRODUCT_BUNDLE_IDENTIFIER = com.christophebugnon.OCExchange;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -534,7 +534,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.christophebugnon.OCWeather;
+				PRODUCT_BUNDLE_IDENTIFIER = com.christophebugnon.OCExchange;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -555,7 +555,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.christophebugnon.OCWeatherTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.christophebugnon.OCExchangeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -576,7 +576,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.christophebugnon.OCWeatherTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.christophebugnon.OCExchangeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};
@@ -594,7 +594,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.christophebugnon.OCWeatherAPIEndToEndTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.christophebugnon.OCExchangeAPIEndToEndTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};
@@ -612,7 +612,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.christophebugnon.OCWeatherAPIEndToEndTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.christophebugnon.OCExchangeAPIEndToEndTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 			};
