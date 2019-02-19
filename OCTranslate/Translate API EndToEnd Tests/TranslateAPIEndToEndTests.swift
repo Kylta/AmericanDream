@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import OCTranslateAPI
+import OCTranslate
 
 class TranslateAPIEndToEndTests: XCTestCase {
 
