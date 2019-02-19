@@ -1,6 +1,4 @@
 # American Dream
-
-## OCWeather
 [![Build Status](https://travis-ci.org/Kylta/AmericanDream.svg?branch=master)](https://travis-ci.org/Kylta/AmericanDream)
 
 ## Description of the application
