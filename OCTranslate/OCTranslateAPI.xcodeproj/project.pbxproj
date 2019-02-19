@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		46E24679221949210066F113 /* TranslateAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E2466F221949210066F113 /* TranslateAPI.framework */; };
+		46E24679221949210066F113 /* OCTranslateAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E2466F221949210066F113 /* OCTranslateAPI.framework */; };
 		46E2468A221949E80066F113 /* GenericItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E24689221949E80066F113 /* GenericItem.swift */; };
-		46E2468C22194B6C0066F113 /* RemoteWeatherLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2468B22194B6C0066F113 /* RemoteWeatherLoaderTests.swift */; };
+		46E2468C22194B6C0066F113 /* RemoteTranslateLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2468B22194B6C0066F113 /* RemoteTranslateLoaderTests.swift */; };
 		46E2468E22194C680066F113 /* GenericLoaderLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2468D22194C680066F113 /* GenericLoaderLoader.swift */; };
 		46E24691221950390066F113 /* RemoteGenericLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E24690221950390066F113 /* RemoteGenericLoader.swift */; };
 		46E2469722196F5A0066F113 /* GenericItemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2469622196F5A0066F113 /* GenericItemMapper.swift */; };
@@ -18,7 +18,7 @@
 		46E2469F22199FB10066F113 /* XCTestCase+TrackMemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2469E22199FB10066F113 /* XCTestCase+TrackMemoryLeaks.swift */; };
 		46E246A12219B0B30066F113 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E246A02219B0B30066F113 /* URLSessionHTTPClient.swift */; };
 		46E246A92219B61F0066F113 /* GenericAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E246A82219B61F0066F113 /* GenericAPIEndToEndTests.swift */; };
-		46E246AB2219B61F0066F113 /* TranslateAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E2466F221949210066F113 /* TranslateAPI.framework */; };
+		46E246AB2219B61F0066F113 /* OCTranslateAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E2466F221949210066F113 /* OCTranslateAPI.framework */; };
 		46E246B42219C0840066F113 /* XCTestCase+TrackMemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2469E22199FB10066F113 /* XCTestCase+TrackMemoryLeaks.swift */; };
 		46E246B72219D1AE0066F113 /* genericModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 46E246B62219D1AE0066F113 /* genericModel.json */; };
 /* End PBXBuildFile section */
@@ -41,12 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		46E2466F221949210066F113 /* TranslateAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TranslateAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46E2466F221949210066F113 /* OCTranslateAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OCTranslateAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E24673221949210066F113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		46E24678221949210066F113 /* TranslateAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TranslateAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46E24678221949210066F113 /* OCTranslateAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCTranslateAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E2467F221949220066F113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46E24689221949E80066F113 /* GenericItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericItem.swift; sourceTree = "<group>"; };
-		46E2468B22194B6C0066F113 /* RemoteWeatherLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteWeatherLoaderTests.swift; sourceTree = "<group>"; };
+		46E2468B22194B6C0066F113 /* RemoteTranslateLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTranslateLoaderTests.swift; sourceTree = "<group>"; };
 		46E2468D22194C680066F113 /* GenericLoaderLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericLoaderLoader.swift; sourceTree = "<group>"; };
 		46E24690221950390066F113 /* RemoteGenericLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteGenericLoader.swift; sourceTree = "<group>"; };
 		46E2469622196F5A0066F113 /* GenericItemMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericItemMapper.swift; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		46E2469B22198DDE0066F113 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		46E2469E22199FB10066F113 /* XCTestCase+TrackMemoryLeaks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+TrackMemoryLeaks.swift"; sourceTree = "<group>"; };
 		46E246A02219B0B30066F113 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
-		46E246A62219B61F0066F113 /* TranslateAPIAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TranslateAPIAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46E246A62219B61F0066F113 /* OCTranslateAPIAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCTranslateAPIAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E246A82219B61F0066F113 /* GenericAPIEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericAPIEndToEndTests.swift; sourceTree = "<group>"; };
 		46E246AA2219B61F0066F113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46E246B62219D1AE0066F113 /* genericModel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = genericModel.json; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46E24679221949210066F113 /* TranslateAPI.framework in Frameworks */,
+				46E24679221949210066F113 /* OCTranslateAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46E246AB2219B61F0066F113 /* TranslateAPI.framework in Frameworks */,
+				46E246AB2219B61F0066F113 /* OCTranslateAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,9 +90,9 @@
 		46E24665221949210066F113 = {
 			isa = PBXGroup;
 			children = (
-				46E24671221949210066F113 /* Generic */,
-				46E2467C221949220066F113 /* GenericAPITests */,
-				46E246A72219B61F0066F113 /* GenericAPIEndToEndTests */,
+				46E24671221949210066F113 /* Translate */,
+				46E2467C221949220066F113 /* TranslateAPITests */,
+				46E246A72219B61F0066F113 /* TranslateAPIEndToEndTests */,
 				46E24670221949210066F113 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -100,42 +100,43 @@
 		46E24670221949210066F113 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				46E2466F221949210066F113 /* TranslateAPI.framework */,
-				46E24678221949210066F113 /* TranslateAPITests.xctest */,
-				46E246A62219B61F0066F113 /* TranslateAPIAPIEndToEndTests.xctest */,
+				46E2466F221949210066F113 /* OCTranslateAPI.framework */,
+				46E24678221949210066F113 /* OCTranslateAPITests.xctest */,
+				46E246A62219B61F0066F113 /* OCTranslateAPIAPIEndToEndTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		46E24671221949210066F113 /* Generic */ = {
+		46E24671221949210066F113 /* Translate */ = {
 			isa = PBXGroup;
 			children = (
 				46E24673221949210066F113 /* Info.plist */,
-				46E2468F22194CDA0066F113 /* ModelFeature */,
-				46E246922219503D0066F113 /* GenericAPI */,
+				46E2468F22194CDA0066F113 /* Translate Feature */,
+				46E246922219503D0066F113 /* Translate API */,
 			);
-			path = Generic;
+			path = Translate;
 			sourceTree = "<group>";
 		};
-		46E2467C221949220066F113 /* GenericAPITests */ = {
+		46E2467C221949220066F113 /* TranslateAPITests */ = {
 			isa = PBXGroup;
 			children = (
 				46E2467F221949220066F113 /* Info.plist */,
-				46E2469A22197CC20066F113 /* GenericAPI */,
+				46E2469A22197CC20066F113 /* TranslateAPI */,
 			);
-			path = GenericAPITests;
+			name = TranslateAPITests;
+			path = "Translate API Tests";
 			sourceTree = "<group>";
 		};
-		46E2468F22194CDA0066F113 /* ModelFeature */ = {
+		46E2468F22194CDA0066F113 /* Translate Feature */ = {
 			isa = PBXGroup;
 			children = (
 				46E24689221949E80066F113 /* GenericItem.swift */,
 				46E2468D22194C680066F113 /* GenericLoaderLoader.swift */,
 			);
-			path = ModelFeature;
+			path = "Translate Feature";
 			sourceTree = "<group>";
 		};
-		46E246922219503D0066F113 /* GenericAPI */ = {
+		46E246922219503D0066F113 /* Translate API */ = {
 			isa = PBXGroup;
 			children = (
 				46E24690221950390066F113 /* RemoteGenericLoader.swift */,
@@ -143,18 +144,18 @@
 				46E24698221977930066F113 /* HTTPClient.swift */,
 				46E246A02219B0B30066F113 /* URLSessionHTTPClient.swift */,
 			);
-			path = GenericAPI;
+			path = "Translate API";
 			sourceTree = "<group>";
 		};
-		46E2469A22197CC20066F113 /* GenericAPI */ = {
+		46E2469A22197CC20066F113 /* TranslateAPI */ = {
 			isa = PBXGroup;
 			children = (
 				46E2469D22199F9C0066F113 /* Helpers */,
 				46E246B52219D1850066F113 /* JSON */,
-				46E2468B22194B6C0066F113 /* RemoteWeatherLoaderTests.swift */,
+				46E2468B22194B6C0066F113 /* RemoteTranslateLoaderTests.swift */,
 				46E2469B22198DDE0066F113 /* URLSessionHTTPClientTests.swift */,
 			);
-			path = GenericAPI;
+			path = TranslateAPI;
 			sourceTree = "<group>";
 		};
 		46E2469D22199F9C0066F113 /* Helpers */ = {
@@ -165,13 +166,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		46E246A72219B61F0066F113 /* GenericAPIEndToEndTests */ = {
+		46E246A72219B61F0066F113 /* TranslateAPIEndToEndTests */ = {
 			isa = PBXGroup;
 			children = (
 				46E246A82219B61F0066F113 /* GenericAPIEndToEndTests.swift */,
 				46E246AA2219B61F0066F113 /* Info.plist */,
 			);
-			path = GenericAPIEndToEndTests;
+			name = TranslateAPIEndToEndTests;
+			path = "Translate API EndToEnd Tests";
 			sourceTree = "<group>";
 		};
 		46E246B52219D1850066F113 /* JSON */ = {
@@ -195,9 +197,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		46E2466E221949210066F113 /* TranslateAPI */ = {
+		46E2466E221949210066F113 /* OCTranslateAPI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46E24683221949220066F113 /* Build configuration list for PBXNativeTarget "TranslateAPI" */;
+			buildConfigurationList = 46E24683221949220066F113 /* Build configuration list for PBXNativeTarget "OCTranslateAPI" */;
 			buildPhases = (
 				46E2466A221949210066F113 /* Headers */,
 				46E2466B221949210066F113 /* Sources */,
@@ -208,14 +210,14 @@
 			);
 			dependencies = (
 			);
-			name = TranslateAPI;
+			name = OCTranslateAPI;
 			productName = OCWeather;
-			productReference = 46E2466F221949210066F113 /* TranslateAPI.framework */;
+			productReference = 46E2466F221949210066F113 /* OCTranslateAPI.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		46E24677221949210066F113 /* TranslateAPITests */ = {
+		46E24677221949210066F113 /* OCTranslateAPITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46E24686221949220066F113 /* Build configuration list for PBXNativeTarget "TranslateAPITests" */;
+			buildConfigurationList = 46E24686221949220066F113 /* Build configuration list for PBXNativeTarget "OCTranslateAPITests" */;
 			buildPhases = (
 				46E24674221949210066F113 /* Sources */,
 				46E24675221949210066F113 /* Frameworks */,
@@ -226,14 +228,14 @@
 			dependencies = (
 				46E2467B221949210066F113 /* PBXTargetDependency */,
 			);
-			name = TranslateAPITests;
+			name = OCTranslateAPITests;
 			productName = OCWeatherTests;
-			productReference = 46E24678221949210066F113 /* TranslateAPITests.xctest */;
+			productReference = 46E24678221949210066F113 /* OCTranslateAPITests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		46E246A52219B61F0066F113 /* TranslateAPIAPIEndToEndTests */ = {
+		46E246A52219B61F0066F113 /* OCTranslateAPIAPIEndToEndTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46E246AE2219B61F0066F113 /* Build configuration list for PBXNativeTarget "TranslateAPIAPIEndToEndTests" */;
+			buildConfigurationList = 46E246AE2219B61F0066F113 /* Build configuration list for PBXNativeTarget "OCTranslateAPIAPIEndToEndTests" */;
 			buildPhases = (
 				46E246A22219B61F0066F113 /* Sources */,
 				46E246A32219B61F0066F113 /* Frameworks */,
@@ -244,9 +246,9 @@
 			dependencies = (
 				46E246AD2219B61F0066F113 /* PBXTargetDependency */,
 			);
-			name = TranslateAPIAPIEndToEndTests;
+			name = OCTranslateAPIAPIEndToEndTests;
 			productName = OCWeatherAPIEndToEndTests;
-			productReference = 46E246A62219B61F0066F113 /* TranslateAPIAPIEndToEndTests.xctest */;
+			productReference = 46E246A62219B61F0066F113 /* OCTranslateAPIAPIEndToEndTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -272,7 +274,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 46E24669221949210066F113 /* Build configuration list for PBXProject "TranslateAPI" */;
+			buildConfigurationList = 46E24669221949210066F113 /* Build configuration list for PBXProject "OCTranslateAPI" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -284,9 +286,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				46E2466E221949210066F113 /* TranslateAPI */,
-				46E24677221949210066F113 /* TranslateAPITests */,
-				46E246A52219B61F0066F113 /* TranslateAPIAPIEndToEndTests */,
+				46E2466E221949210066F113 /* OCTranslateAPI */,
+				46E24677221949210066F113 /* OCTranslateAPITests */,
+				46E246A52219B61F0066F113 /* OCTranslateAPIAPIEndToEndTests */,
 			);
 		};
 /* End PBXProject section */
@@ -334,7 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46E2468C22194B6C0066F113 /* RemoteWeatherLoaderTests.swift in Sources */,
+				46E2468C22194B6C0066F113 /* RemoteTranslateLoaderTests.swift in Sources */,
 				46E2469C22198DDE0066F113 /* URLSessionHTTPClientTests.swift in Sources */,
 				46E2469F22199FB10066F113 /* XCTestCase+TrackMemoryLeaks.swift in Sources */,
 			);
@@ -354,12 +356,12 @@
 /* Begin PBXTargetDependency section */
 		46E2467B221949210066F113 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 46E2466E221949210066F113 /* TranslateAPI */;
+			target = 46E2466E221949210066F113 /* OCTranslateAPI */;
 			targetProxy = 46E2467A221949210066F113 /* PBXContainerItemProxy */;
 		};
 		46E246AD2219B61F0066F113 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 46E2466E221949210066F113 /* TranslateAPI */;
+			target = 46E2466E221949210066F113 /* OCTranslateAPI */;
 			targetProxy = 46E246AC2219B61F0066F113 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -499,7 +501,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Generic/Info.plist;
+				INFOPLIST_FILE = TranslateAPI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -527,7 +529,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Generic/Info.plist;
+				INFOPLIST_FILE = TranslateAPI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -549,7 +551,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 78BZCUCGN3;
-				INFOPLIST_FILE = GenericAPITests/Info.plist;
+				INFOPLIST_FILE = TranslateAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -570,7 +572,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 78BZCUCGN3;
-				INFOPLIST_FILE = GenericAPITests/Info.plist;
+				INFOPLIST_FILE = TranslateAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -588,7 +590,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 78BZCUCGN3;
-				INFOPLIST_FILE = GenericAPIEndToEndTests/Info.plist;
+				INFOPLIST_FILE = TranslateAPIEndToEndTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -606,7 +608,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 78BZCUCGN3;
-				INFOPLIST_FILE = GenericAPIEndToEndTests/Info.plist;
+				INFOPLIST_FILE = TranslateAPIEndToEndTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -621,7 +623,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		46E24669221949210066F113 /* Build configuration list for PBXProject "TranslateAPI" */ = {
+		46E24669221949210066F113 /* Build configuration list for PBXProject "OCTranslateAPI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46E24681221949220066F113 /* Debug */,
@@ -630,7 +632,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46E24683221949220066F113 /* Build configuration list for PBXNativeTarget "TranslateAPI" */ = {
+		46E24683221949220066F113 /* Build configuration list for PBXNativeTarget "OCTranslateAPI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46E24684221949220066F113 /* Debug */,
@@ -639,7 +641,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46E24686221949220066F113 /* Build configuration list for PBXNativeTarget "TranslateAPITests" */ = {
+		46E24686221949220066F113 /* Build configuration list for PBXNativeTarget "OCTranslateAPITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46E24687221949220066F113 /* Debug */,
@@ -648,7 +650,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46E246AE2219B61F0066F113 /* Build configuration list for PBXNativeTarget "TranslateAPIAPIEndToEndTests" */ = {
+		46E246AE2219B61F0066F113 /* Build configuration list for PBXNativeTarget "OCTranslateAPIAPIEndToEndTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46E246AF2219B61F0066F113 /* Debug */,
