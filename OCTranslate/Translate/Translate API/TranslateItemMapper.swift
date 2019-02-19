@@ -8,10 +8,15 @@
 
 import Foundation
 
-internal final class TranslateItemMapper: Codable {
+internal final class TranslateItemMapper: Decodable {
+    let translations: [Response]
+    var translateItem: TranslateModel {
+        return TranslateModel(translatedText: translations.map { $0.translatedText }.first!)
+    }
 
-    var TranslateItem: TranslateModel {
-        return TranslateModel()
+    struct Response: Decodable {
+        let detectedSourceLanguage: String
+        let translatedText: String
     }
 
     private static var OK_200: Int {
@@ -20,10 +25,11 @@ internal final class TranslateItemMapper: Codable {
 
     internal static func map(_ data: Data, _ response: HTTPURLResponse) -> RemoteTranslateLoader.Result {
         guard response.statusCode == OK_200,
-            let TranslateItemMapper = try? JSONDecoder().decode(TranslateItemMapper.self, from: data) else {
+            let json = try? Service.getJSON(from: data, atKeyPath: "data"),
+            let translateItemMapper = try? JSONDecoder().decode(TranslateItemMapper.self, withJSONObject: json) else {
                 return .failure(RemoteTranslateLoader.Error.invalidData)
         }
 
-        return .success(TranslateItemMapper.TranslateItem)
+        return .success(translateItemMapper.translateItem)
     }
 }

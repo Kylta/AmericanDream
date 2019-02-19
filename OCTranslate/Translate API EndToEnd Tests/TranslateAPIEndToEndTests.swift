@@ -14,9 +14,9 @@ class TranslateAPIEndToEndTests: XCTestCase {
     func test_endToEndTestServerGETTranslateResult_matchesFixedTestAccountData() {
         switch getTranslateResult() {
         case let .success(item)?:
-            XCTFail("Expected error Translate result, got \(item) instead")
+            XCTAssertEqual(item.translatedText, "Bonjour")
         case let .failure(error)?:
-            XCTAssertNotNil(error)
+            XCTFail("Expected result Translate, got \(error) instead")
         default:
             XCTFail("Expected successful Translate result, got no result instead")
         }
@@ -27,7 +27,7 @@ class TranslateAPIEndToEndTests: XCTestCase {
     private func getTranslateResult(file: StaticString = #file, line: UInt = #line) -> LoadTranslateResult<TranslateModel>? {
         let client = URLSessionHTTPClient()
         // Use samples URL from your API
-        let testServerURL = URL(string: "https://samples.openTranslatemap.org/data/2.5/Translate?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22")!
+        let testServerURL = URL(string: "https://www.googleapis.com/language/translate/v2?key=AIzaSyAZBRy5yETaiffUODxICqMxGBrSnSWXzRQ&target=fr&q=Hello")!
         let loader = RemoteTranslateLoader(client: client, url: testServerURL)
         trackMemoryLeaks(instance: client, file: file, line: line)
         trackMemoryLeaks(instance: loader, file: file, line: line)

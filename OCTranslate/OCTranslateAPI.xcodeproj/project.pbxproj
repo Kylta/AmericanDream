@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46494C13221C92E300B0CB8E /* JSONDecoder+DecodeJSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46494C12221C92E300B0CB8E /* JSONDecoder+DecodeJSONObject.swift */; };
+		46494C16221C963C00B0CB8E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46494C15221C963C00B0CB8E /* Service.swift */; };
 		46E24679221949210066F113 /* OCTranslateAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E2466F221949210066F113 /* OCTranslateAPI.framework */; };
 		46E2468A221949E80066F113 /* TranslateItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E24689221949E80066F113 /* TranslateItem.swift */; };
 		46E2468C22194B6C0066F113 /* RemoteTranslateLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2468B22194B6C0066F113 /* RemoteTranslateLoaderTests.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		46494C12221C92E300B0CB8E /* JSONDecoder+DecodeJSONObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+DecodeJSONObject.swift"; sourceTree = "<group>"; };
+		46494C15221C963C00B0CB8E /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		46E2466F221949210066F113 /* OCTranslateAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OCTranslateAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E24673221949210066F113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46E24678221949210066F113 /* OCTranslateAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCTranslateAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46494C14221C960800B0CB8E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				46494C12221C92E300B0CB8E /* JSONDecoder+DecodeJSONObject.swift */,
+				46494C15221C963C00B0CB8E /* Service.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		46E24665221949210066F113 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +152,7 @@
 		46E246922219503D0066F113 /* Translate API */ = {
 			isa = PBXGroup;
 			children = (
+				46494C14221C960800B0CB8E /* Helper */,
 				46E24690221950390066F113 /* RemoteTranslateLoader.swift */,
 				46E2469622196F5A0066F113 /* TranslateItemMapper.swift */,
 				46E24698221977930066F113 /* HTTPClient.swift */,
@@ -324,8 +338,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				46E2468A221949E80066F113 /* TranslateItem.swift in Sources */,
+				46494C16221C963C00B0CB8E /* Service.swift in Sources */,
 				46E24699221977930066F113 /* HTTPClient.swift in Sources */,
 				46E2468E22194C680066F113 /* TranslateLoaderLoader.swift in Sources */,
+				46494C13221C92E300B0CB8E /* JSONDecoder+DecodeJSONObject.swift in Sources */,
 				46E2469722196F5A0066F113 /* TranslateItemMapper.swift in Sources */,
 				46E24691221950390066F113 /* RemoteTranslateLoader.swift in Sources */,
 				46E246A12219B0B30066F113 /* URLSessionHTTPClient.swift in Sources */,

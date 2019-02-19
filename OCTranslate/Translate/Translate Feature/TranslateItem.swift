@@ -9,6 +9,9 @@
 import Foundation
 
 public struct TranslateModel: Equatable {
+    public let translatedText: String
 
-    public init() {}
+    public init(translatedText: String) {
+        self.translatedText = translatedText
+    }
 }

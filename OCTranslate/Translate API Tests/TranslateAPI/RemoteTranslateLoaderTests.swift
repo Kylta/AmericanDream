@@ -70,7 +70,7 @@ class RemoteTranslateLoaderTests: XCTestCase {
     func test_load_deliversItemOn200HTTPResponseWithJSONItem() {
         let (sut, client) = makeSUT()
 
-        let item = makeItem()
+        let item = makeItem(translatedText: "Bonjour")
 
         expect(sut: sut, toCompleteWith: .success(item.model), when: {
             client.complete(withStatusCode: 200, data: makeJSON(valid: true))
@@ -107,8 +107,8 @@ class RemoteTranslateLoaderTests: XCTestCase {
         return .failure(error)
     }
 
-    fileprivate func makeItem() -> (model: TranslateModel, json: Data) {
-        let item = TranslateModel()
+    fileprivate func makeItem(translatedText: String) -> (model: TranslateModel, json: Data) {
+        let item = TranslateModel(translatedText: translatedText)
         let json = makeJSON(valid: true)
 
         return (item, json)
