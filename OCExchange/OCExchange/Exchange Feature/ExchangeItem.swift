@@ -21,4 +21,16 @@ public struct ExchangeModel: Equatable {
         self.base = base
         self.currency = currency
     }
+
+    public func emojiFlag(regionCode: String) -> String {
+        var code = regionCode.uppercased()
+        code.removeLast()
+        var flagString = ""
+
+        code.unicodeScalars
+            .compactMap { UnicodeScalar(127397 + $0.value) }
+            .forEach { flagString.append(String($0)) }
+
+        return flagString
+    }
 }
