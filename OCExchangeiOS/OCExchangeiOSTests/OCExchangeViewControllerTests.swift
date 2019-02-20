@@ -46,6 +46,19 @@ class OCExchangeCViewControllerTests: XCTestCase {
         XCTAssertEqual(callCount, 2)
     }
 
+    func test_viewWillAppear_triggersReloadDataClosure() {
+        let sut = makeSUT()
+
+        var callCount = 0
+        sut.reloadData = { _ in callCount += 1}
+
+        sut.viewWillAppear(false)
+        XCTAssertEqual(callCount, 1)
+
+        sut.viewWillAppear(false)
+        XCTAssertEqual(callCount, 2)
+    }
+
     func makeSUT() -> OCExchangeViewController {
         let sut = sb.instantiateInitialViewController() as! OCExchangeViewController
         sut.loadViewIfNeeded()

@@ -15,6 +15,12 @@ class OCExchangeViewController: UIViewController  {
     @IBOutlet weak var reloadButton: UIButton!
     var reloadData: (Double) -> Void = { _ in }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        reloadData(Double(label.text!)!)
+    }
+
     @IBAction private func reload() {
         reloadData(Double(label.text!)!)
     }
