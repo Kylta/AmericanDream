@@ -25,6 +25,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		46BE9849221D875E0063FABD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		46BE9818221D86670063FABD /* OCExchangeiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCExchangeiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46BE981B221D86670063FABD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +49,7 @@
 		46BE982C221D86680063FABD /* OCExchangeiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCExchangeiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46BE9830221D86680063FABD /* OCExchangeiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCExchangeiOSTests.swift; sourceTree = "<group>"; };
 		46BE9832221D86680063FABD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46BE984B221D87690063FABD /* OCExchange.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCExchange.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/OCExchange-gqelslowlfkgmmaynximrctzeerr/Build/Products/Debug-iphoneos/OCExchange.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +75,7 @@
 			children = (
 				46BE981A221D86670063FABD /* OCExchangeiOS */,
 				46BE982F221D86680063FABD /* OCExchangeiOSTests */,
+				46BE984A221D87620063FABD /* Frameworks */,
 				46BE9819221D86670063FABD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +111,14 @@
 			path = OCExchangeiOSTests;
 			sourceTree = "<group>";
 		};
+		46BE984A221D87620063FABD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46BE984B221D87690063FABD /* OCExchange.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +129,7 @@
 				46BE9814221D86670063FABD /* Sources */,
 				46BE9815221D86670063FABD /* Frameworks */,
 				46BE9816221D86670063FABD /* Resources */,
+				46BE9849221D875E0063FABD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
