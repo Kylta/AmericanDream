@@ -9,13 +9,14 @@
 import UIKit
 import OCExchange
 
-class OCExchangeViewController: UIViewController {
+class OCExchangeViewController: UIViewController  {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var reloadButton: UIButton!
+    var reloadData: (Double) -> Void = { _ in }
+
+    @IBAction private func reload() {
+        reloadData(Double(label.text!)!)
     }
-
-
 }
 

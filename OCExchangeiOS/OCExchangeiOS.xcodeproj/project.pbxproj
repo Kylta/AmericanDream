@@ -12,7 +12,7 @@
 		46BE9821221D86670063FABD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BE981F221D86670063FABD /* Main.storyboard */; };
 		46BE9823221D86680063FABD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46BE9822221D86680063FABD /* Assets.xcassets */; };
 		46BE9826221D86680063FABD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BE9824221D86680063FABD /* LaunchScreen.storyboard */; };
-		46BE9831221D86680063FABD /* OCExchangeiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BE9830221D86680063FABD /* OCExchangeiOSTests.swift */; };
+		46BE9831221D86680063FABD /* OCExchangeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BE9830221D86680063FABD /* OCExchangeViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,7 @@
 		46BE9825221D86680063FABD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46BE9827221D86680063FABD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46BE982C221D86680063FABD /* OCExchangeiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCExchangeiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		46BE9830221D86680063FABD /* OCExchangeiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCExchangeiOSTests.swift; sourceTree = "<group>"; };
+		46BE9830221D86680063FABD /* OCExchangeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCExchangeViewControllerTests.swift; sourceTree = "<group>"; };
 		46BE9832221D86680063FABD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46BE984B221D87690063FABD /* OCExchange.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCExchange.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/OCExchange-gqelslowlfkgmmaynximrctzeerr/Build/Products/Debug-iphoneos/OCExchange.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,7 +105,7 @@
 		46BE982F221D86680063FABD /* OCExchangeiOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				46BE9830221D86680063FABD /* OCExchangeiOSTests.swift */,
+				46BE9830221D86680063FABD /* OCExchangeViewControllerTests.swift */,
 				46BE9832221D86680063FABD /* Info.plist */,
 			);
 			path = OCExchangeiOSTests;
@@ -230,7 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46BE9831221D86680063FABD /* OCExchangeiOSTests.swift in Sources */,
+				46BE9831221D86680063FABD /* OCExchangeViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
