@@ -30,6 +30,7 @@ internal final class ExchangeItemMapper: Decodable {
         let idr: Double
         let vnd: Double
         let mxn: Double
+        let usd: Double
 
         enum CodingKeys: String, CodingKey {
             case gbp = "GBP"
@@ -43,10 +44,12 @@ internal final class ExchangeItemMapper: Decodable {
             case idr = "IDR"
             case vnd = "VND"
             case mxn = "MXN"
+            case usd = "USD"
         }
 
         func getCurrencies() -> [String: Double] {
             return ["GBP": gbp,
+                    "USD": usd,
                     "CAD": cad,
                     "AUD": aud,
                     "JPY": jpy,
