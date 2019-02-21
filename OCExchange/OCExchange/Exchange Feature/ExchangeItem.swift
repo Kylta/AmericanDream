@@ -22,7 +22,7 @@ public struct ExchangeModel: Equatable {
         self.currency = currency
     }
 
-    public func emojiFlag(regionCode: String) -> String {
+    public func getEmojiFlag(regionCode: String) -> String {
         var code = regionCode.uppercased()
         code.removeLast()
         var flagString = ""
@@ -32,5 +32,10 @@ public struct ExchangeModel: Equatable {
             .forEach { flagString.append(String($0)) }
 
         return flagString
+    }
+
+    public func getSymbol(forCurrencyCode code: String) -> String? {
+        let locale = NSLocale(localeIdentifier: code)
+        return locale.displayName(forKey: .currencySymbol, value: code)
     }
 }

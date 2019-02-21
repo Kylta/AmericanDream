@@ -15,6 +15,8 @@ class ExchangeAPIEndToEndTests: XCTestCase {
         switch getExchangeResult() {
         case let .success(item)?:
             XCTAssertNotNil(item)
+            XCTAssertEqual(item.getEmojiFlag(regionCode: "EUR"), "🇪🇺")
+            XCTAssertEqual(item.getSymbol(forCurrencyCode: "EUR"), "€")
         case let .failure(error)?:
             XCTFail("Expected successful Exchange result, got \(error) instead")
         default:
