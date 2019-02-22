@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46687BA72220937600E00164 /* ExchangeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E24689221949E80066F113 /* ExchangeItem.swift */; };
+		46687BA82220937600E00164 /* GenericLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2468D22194C680066F113 /* GenericLoader.swift */; };
+		46687BA92220937600E00164 /* RemoteExchangeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E24690221950390066F113 /* RemoteExchangeLoader.swift */; };
+		46687BAA2220937600E00164 /* ExchangeItemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2469622196F5A0066F113 /* ExchangeItemMapper.swift */; };
+		46687BAB2220937600E00164 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E24698221977930066F113 /* HTTPClient.swift */; };
+		46687BAC2220937600E00164 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E246A02219B0B30066F113 /* URLSessionHTTPClient.swift */; };
 		46BE97CD221D85320063FABD /* OCExchange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BE97C4221D85310063FABD /* OCExchange.framework */; };
 		46BE983B221D86F60063FABD /* XCTestCase+TrackMemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2469E22199FB10066F113 /* XCTestCase+TrackMemoryLeaks.swift */; };
 		46BE983C221D86F60063FABD /* genericModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 46E246B62219D1AE0066F113 /* genericModel.json */; };
 		46BE983D221D86F60063FABD /* RemoteExchangeLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2468B22194B6C0066F113 /* RemoteExchangeLoaderTests.swift */; };
 		46BE983E221D86F60063FABD /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2469B22198DDE0066F113 /* URLSessionHTTPClientTests.swift */; };
 		46BE983F221D86F60063FABD /* GenericAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E246A82219B61F0066F113 /* GenericAPIEndToEndTests.swift */; };
-		46BE9840221D87000063FABD /* ExchangeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E24689221949E80066F113 /* ExchangeItem.swift */; };
-		46BE9841221D87000063FABD /* GenericLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2468D22194C680066F113 /* GenericLoader.swift */; };
-		46BE9842221D87000063FABD /* RemoteExchangeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E24690221950390066F113 /* RemoteExchangeLoader.swift */; };
-		46BE9843221D87000063FABD /* ExchangeItemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2469622196F5A0066F113 /* ExchangeItemMapper.swift */; };
-		46BE9844221D87000063FABD /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E24698221977930066F113 /* HTTPClient.swift */; };
-		46BE9845221D87000063FABD /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E246A02219B0B30066F113 /* URLSessionHTTPClient.swift */; };
 		46E24679221949210066F113 /* OCExchange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E2466F221949210066F113 /* OCExchange.framework */; };
 		46E2468A221949E80066F113 /* ExchangeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E24689221949E80066F113 /* ExchangeItem.swift */; };
 		46E2468C22194B6C0066F113 /* RemoteExchangeLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2468B22194B6C0066F113 /* RemoteExchangeLoaderTests.swift */; };
@@ -425,12 +425,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46BE9842221D87000063FABD /* RemoteExchangeLoader.swift in Sources */,
-				46BE9844221D87000063FABD /* HTTPClient.swift in Sources */,
-				46BE9841221D87000063FABD /* GenericLoader.swift in Sources */,
-				46BE9843221D87000063FABD /* ExchangeItemMapper.swift in Sources */,
-				46BE9840221D87000063FABD /* ExchangeItem.swift in Sources */,
-				46BE9845221D87000063FABD /* URLSessionHTTPClient.swift in Sources */,
+				46687BA92220937600E00164 /* RemoteExchangeLoader.swift in Sources */,
+				46687BAB2220937600E00164 /* HTTPClient.swift in Sources */,
+				46687BA82220937600E00164 /* GenericLoader.swift in Sources */,
+				46687BAA2220937600E00164 /* ExchangeItemMapper.swift in Sources */,
+				46687BA72220937600E00164 /* ExchangeItem.swift in Sources */,
+				46687BAC2220937600E00164 /* URLSessionHTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

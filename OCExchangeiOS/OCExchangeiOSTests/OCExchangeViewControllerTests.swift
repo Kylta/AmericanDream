@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import OCExchange
 @testable import OCExchangeiOS
 
 class OCExchangeCViewControllerTests: XCTestCase {
@@ -46,22 +47,29 @@ class OCExchangeCViewControllerTests: XCTestCase {
         XCTAssertEqual(callCount, 2)
     }
 
-    func test_viewWillAppear_triggersReloadDataClosure() {
+    func test_viewDidLoad_transfertExchangeDataInOCExchangeViewController() {
         let sut = makeSUT()
 
-        var callCount = 0
-        sut.reloadData = { _ in callCount += 1}
+        let exp = expectation(description: "Wait for completion")
+        sut.refreshExchangeView()
+        exp.fulfill()
 
-        sut.viewWillAppear(false)
-        XCTAssertEqual(callCount, 1)
+        wait(for: [exp], timeout: 1)
 
-        sut.viewWillAppear(false)
-        XCTAssertEqual(callCount, 2)
+        XCTAssertEqual(sut.collectionView.numberOfItems(inSection: 0), 12)
     }
 
     func makeSUT() -> OCExchangeViewController {
-        let sut = sb.instantiateInitialViewController() as! OCExchangeViewController
-        sut.loadViewIfNeeded()
+        var sut: OCExchangeViewController!
+        if let vc = sb.instantiateInitialViewController() as? OCExchangeViewController {
+            let client = URLSessionHTTPClient()
+            let url = URL(string: "http://data.fixer.io/api/latest?access_key=356dae2235195b60bb99471f9de6c140&base?=EUR&symbols=USD,GBP,CAD,AUD,JPY,CNY,INR,SGD,BRL,IDR,VND,MXN")!
+            let loader = RemoteExchangeLoader(client: client, url: url)
+            let presenter = ExchangePresenterImplementation(view: vc, loader: loader)
+            vc.presenter = presenter
+            vc.loadViewIfNeeded()
+            sut = vc
+        }
         return sut
     }
 }

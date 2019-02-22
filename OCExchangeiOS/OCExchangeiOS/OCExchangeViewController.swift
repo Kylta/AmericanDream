@@ -9,16 +9,21 @@
 import UIKit
 import OCExchange
 
-class OCExchangeViewController: UIViewController  {
+final class OCExchangeViewController: UIViewController  {
+    @IBOutlet private(set) weak var label: UILabel!
+    @IBOutlet private(set) weak var reloadButton: UIButton!
+    @IBOutlet private(set) weak var collectionView: UICollectionView!
 
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var reloadButton: UIButton!
     var reloadData: (Double) -> Void = { _ in }
+    var presenter: ExchangePresenter!
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-        reloadData(Double(label.text!)!)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+
+        presenter.viewDidLoad()
     }
 
     @IBAction private func reload() {
@@ -26,3 +31,21 @@ class OCExchangeViewController: UIViewController  {
     }
 }
 
+extension OCExchangeViewController: ExchangeView {
+    func refreshExchangeView() {
+        DispatchQueue.main.async { [weak self] in
+            self?.collectionView.reloadData()
+        }
+    }
+}
+
+extension OCExchangeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return presenter.numberOfCurrencies
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "exchangeCell", for: indexPath)
+        return cell
+    }
+}

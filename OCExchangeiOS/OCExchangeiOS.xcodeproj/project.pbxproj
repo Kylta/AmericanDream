@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46687BAE222093BA00E00164 /* OCExchangePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46687BAD222093BA00E00164 /* OCExchangePresenter.swift */; };
 		46BE981C221D86670063FABD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BE981B221D86670063FABD /* AppDelegate.swift */; };
 		46BE981E221D86670063FABD /* OCExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BE981D221D86670063FABD /* OCExchangeViewController.swift */; };
 		46BE9821221D86670063FABD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BE981F221D86670063FABD /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		46687BAD222093BA00E00164 /* OCExchangePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCExchangePresenter.swift; sourceTree = "<group>"; };
 		46BE9818221D86670063FABD /* OCExchangeiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCExchangeiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46BE981B221D86670063FABD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46BE981D221D86670063FABD /* OCExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCExchangeViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				46BE981B221D86670063FABD /* AppDelegate.swift */,
+				46687BAD222093BA00E00164 /* OCExchangePresenter.swift */,
 				46BE981D221D86670063FABD /* OCExchangeViewController.swift */,
 				46BE981F221D86670063FABD /* Main.storyboard */,
 				46BE9822221D86680063FABD /* Assets.xcassets */,
@@ -223,6 +226,7 @@
 			files = (
 				46BE981E221D86670063FABD /* OCExchangeViewController.swift in Sources */,
 				46BE981C221D86670063FABD /* AppDelegate.swift in Sources */,
+				46687BAE222093BA00E00164 /* OCExchangePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

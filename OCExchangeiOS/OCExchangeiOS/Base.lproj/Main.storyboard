@@ -36,16 +36,42 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QVb-P8-4gV">
+                                <rect key="frame" x="16" y="76" width="343" height="591"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="x59-w2-Ywu">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="exchangeCell" id="6tr-8e-6ko">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.13943034409999999" green="0.33370161059999998" blue="0.49413698909999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QVb-P8-4gV" secondAttribute="trailing" constant="16" id="8II-in-iT2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QVb-P8-4gV" secondAttribute="bottom" id="Mm0-DR-G1i"/>
                             <constraint firstItem="hO7-kI-ReJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="PnU-Ac-qLJ"/>
+                            <constraint firstItem="QVb-P8-4gV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="mGL-IK-EZm"/>
+                            <constraint firstItem="QVb-P8-4gV" firstAttribute="top" secondItem="hO7-kI-ReJ" secondAttribute="bottom" constant="16" id="tir-I5-eAI"/>
                             <constraint firstItem="hO7-kI-ReJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="wvl-92-7Ph"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hO7-kI-ReJ" secondAttribute="trailing" constant="16" id="zx8-YC-IxI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="QVb-P8-4gV" id="MZa-L3-hLi"/>
                         <outlet property="label" destination="zpc-lB-Ciu" id="cjn-YE-ZZc"/>
                         <outlet property="reloadButton" destination="4lA-qt-dMM" id="hcf-9W-GxT"/>
                     </connections>
