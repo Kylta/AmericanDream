@@ -10,9 +10,9 @@ import UIKit
 import OCExchange
 
 final class OCExchangeViewController: UIViewController  {
-    @IBOutlet private(set) weak var label: UILabel!
-    @IBOutlet private(set) weak var reloadButton: UIButton!
-    @IBOutlet private(set) weak var collectionView: UICollectionView!
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var reloadButton: UIButton!
+    @IBOutlet weak var collectionView: UICollectionView!
 
     var reloadData: (Double) -> Void = { _ in }
     var presenter: ExchangePresenter!
@@ -39,13 +39,28 @@ extension OCExchangeViewController: ExchangeView {
     }
 }
 
-extension OCExchangeViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension OCExchangeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+    // MARK: - DataSource
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.numberOfCurrencies
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "exchangeCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "exchangeCell", for: indexPath) as! ExchangeCollectionViewCell
+        presenter.configure(cell: cell, forRow: indexPath.row)
         return cell
+    }
+
+    // MARK: - Delegate
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width / 2 - 16
+        return CGSize(width: width, height: width)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 8, bottom: 16, right: 8)
     }
 }

@@ -47,23 +47,41 @@ class OCExchangeCViewControllerTests: XCTestCase {
         XCTAssertEqual(callCount, 2)
     }
 
-    func test_viewDidLoad_transfertExchangeDataInOCExchangeViewController() {
+    func test_updateLabel_renderValueInReloadData() {
         let sut = makeSUT()
 
-        let exp = expectation(description: "Wait for completion")
-        sut.refreshExchangeView()
-        exp.fulfill()
+        sut.reloadData(2.0)
+        sut.reloadButton.sendActions(for: .touchUpInside)
 
-        wait(for: [exp], timeout: 1)
+        sut.reloadData = { value in
+            XCTAssertEqual(value, 2.0)
+        }
+    }
+
+    func test_viewDidLoad_transfertExchangeDataInOCExchangeViewController() {
+        let sut = makeSUT()
 
         XCTAssertEqual(sut.collectionView.numberOfItems(inSection: 0), 12)
     }
 
-    func makeSUT() -> OCExchangeViewController {
+    func test_viewDidLoad_rendersValueInExchangeViewCell() {
+        let sut = makeSUT()
+
+        let indexPath = IndexPath(item: 0, section: 0)
+        let cell = sut.collectionView.dataSource?.collectionView(sut.collectionView, cellForItemAt: indexPath) as! ExchangeCollectionViewCell
+
+        XCTAssertEqual(cell.codeLabel.text, "GBP")
+        XCTAssertEqual(cell.flagLabel.text, "🇬🇧")
+        XCTAssertEqual(cell.symbolLabel.text, "£")
+        XCTAssertEqual(cell.valueLabel.text, "0.87")
+    }
+
+    fileprivate func makeSUT() -> OCExchangeViewController {
         var sut: OCExchangeViewController!
+
         if let vc = sb.instantiateInitialViewController() as? OCExchangeViewController {
-            let client = URLSessionHTTPClient()
-            let url = URL(string: "http://data.fixer.io/api/latest?access_key=356dae2235195b60bb99471f9de6c140&base?=EUR&symbols=USD,GBP,CAD,AUD,JPY,CNY,INR,SGD,BRL,IDR,VND,MXN")!
+            let url = URL(string: "http://any-url.com")!
+            let client = HTTPClientMock()
             let loader = RemoteExchangeLoader(client: client, url: url)
             let presenter = ExchangePresenterImplementation(view: vc, loader: loader)
             vc.presenter = presenter
@@ -71,5 +89,14 @@ class OCExchangeCViewControllerTests: XCTestCase {
             sut = vc
         }
         return sut
+    }
+
+    class HTTPClientMock: HTTPClient {
+        func get(from url: URL, completion: @escaping (HTTPClientResult) -> Void) {
+            let filePath = Bundle(for: type(of: self)).url(forResource: "genericModel", withExtension: "json")!
+            let data = try! Data(contentsOf: filePath)
+            let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)!
+            completion(.success(data, response))
+        }
     }
 }

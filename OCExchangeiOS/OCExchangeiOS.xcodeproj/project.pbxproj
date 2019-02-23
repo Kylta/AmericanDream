@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4638C89C222171AF00DC3826 /* genericModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 4638C89B222171A600DC3826 /* genericModel.json */; };
 		46687BAE222093BA00E00164 /* OCExchangePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46687BAD222093BA00E00164 /* OCExchangePresenter.swift */; };
+		46687BB02220A6B000E00164 /* ExchangeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46687BAF2220A6B000E00164 /* ExchangeCollectionViewCell.swift */; };
 		46BE981C221D86670063FABD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BE981B221D86670063FABD /* AppDelegate.swift */; };
-		46BE981E221D86670063FABD /* OCExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BE981D221D86670063FABD /* OCExchangeViewController.swift */; };
 		46BE9821221D86670063FABD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BE981F221D86670063FABD /* Main.storyboard */; };
 		46BE9823221D86680063FABD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46BE9822221D86680063FABD /* Assets.xcassets */; };
 		46BE9826221D86680063FABD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BE9824221D86680063FABD /* LaunchScreen.storyboard */; };
 		46BE9831221D86680063FABD /* OCExchangeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BE9830221D86680063FABD /* OCExchangeViewControllerTests.swift */; };
+		46ECDE652220A9EC0095DDF1 /* OCExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BE981D221D86670063FABD /* OCExchangeViewController.swift */; };
+		46ECDE6A2220AA470095DDF1 /* OCExchange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BE984B221D87690063FABD /* OCExchange.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +43,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4638C89B222171A600DC3826 /* genericModel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = genericModel.json; sourceTree = "<group>"; };
 		46687BAD222093BA00E00164 /* OCExchangePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCExchangePresenter.swift; sourceTree = "<group>"; };
+		46687BAF2220A6B000E00164 /* ExchangeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCollectionViewCell.swift; sourceTree = "<group>"; };
 		46BE9818221D86670063FABD /* OCExchangeiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCExchangeiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46BE981B221D86670063FABD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46BE981D221D86670063FABD /* OCExchangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCExchangeViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46ECDE6A2220AA470095DDF1 /* OCExchange.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				46BE981B221D86670063FABD /* AppDelegate.swift */,
+				46687BAF2220A6B000E00164 /* ExchangeCollectionViewCell.swift */,
 				46687BAD222093BA00E00164 /* OCExchangePresenter.swift */,
 				46BE981D221D86670063FABD /* OCExchangeViewController.swift */,
 				46BE981F221D86670063FABD /* Main.storyboard */,
@@ -109,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				46BE9830221D86680063FABD /* OCExchangeViewControllerTests.swift */,
+				4638C89B222171A600DC3826 /* genericModel.json */,
 				46BE9832221D86680063FABD /* Info.plist */,
 			);
 			path = OCExchangeiOSTests;
@@ -214,6 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4638C89C222171AF00DC3826 /* genericModel.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,8 +233,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46BE981E221D86670063FABD /* OCExchangeViewController.swift in Sources */,
 				46BE981C221D86670063FABD /* AppDelegate.swift in Sources */,
+				46ECDE652220A9EC0095DDF1 /* OCExchangeViewController.swift in Sources */,
+				46687BB02220A6B000E00164 /* ExchangeCollectionViewCell.swift in Sources */,
 				46687BAE222093BA00E00164 /* OCExchangePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
