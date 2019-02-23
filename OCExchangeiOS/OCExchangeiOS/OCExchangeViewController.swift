@@ -37,6 +37,13 @@ extension OCExchangeViewController: ExchangeView {
             self?.collectionView.reloadData()
         }
     }
+
+    func displayPopUpError(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .cancel)
+        alertController.addAction(action)
+        present(alertController, animated: true)
+    }
 }
 
 extension OCExchangeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

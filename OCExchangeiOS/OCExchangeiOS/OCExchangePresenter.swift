@@ -11,6 +11,7 @@ import OCExchange
 
 protocol ExchangeView: class {
     func refreshExchangeView()
+    func displayPopUpError(title: String, message: String)
 }
 
 protocol ExchangeCellView {
@@ -49,11 +50,15 @@ final class ExchangePresenterImplementation: ExchangePresenter {
         loader.load { [weak self] result in
             switch result {
             case let .success(item):
-                print(item)
                 self?.exchangeData = item
                 self?.view?.refreshExchangeView()
             case let .failure(error):
-                print(error)
+                switch error as! RemoteExchangeLoader.Error {
+                case .connectivity:
+                    self?.view?.displayPopUpError(title: "Error", message: "Fail to load data, check your internet access.")
+                case .invalidData:
+                    self?.view?.displayPopUpError(title: "Error", message: "An error system occurred, please contact support or try again later.")
+                }
             }
         }
     }
