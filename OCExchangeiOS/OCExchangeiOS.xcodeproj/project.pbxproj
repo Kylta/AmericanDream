@@ -83,7 +83,7 @@
 		463A0C66222465140007F74F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				463A0C64222463060007F74F /* CustomLabel.swift */,
+				463A0C6A222465AD0007F74F /* Helper */,
 				46BE981D221D86670063FABD /* OCExchangeViewController.swift */,
 				46687BAF2220A6B000E00164 /* ExchangeCollectionViewCell.swift */,
 				46BE981F221D86670063FABD /* Main.storyboard */,
@@ -115,6 +115,14 @@
 				46BE9827221D86680063FABD /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		463A0C6A222465AD0007F74F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				463A0C64222463060007F74F /* CustomLabel.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		46BE980F221D86670063FABD = {
