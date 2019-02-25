@@ -10,7 +10,7 @@ import UIKit
 import OCExchange
 
 final class OCExchangeViewController: UIViewController  {
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var label: CustomLabel!
     @IBOutlet weak var reloadButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
 
