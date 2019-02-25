@@ -80,6 +80,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		463A0C66222465140007F74F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				463A0C64222463060007F74F /* CustomLabel.swift */,
+				46BE981D221D86670063FABD /* OCExchangeViewController.swift */,
+				46687BAF2220A6B000E00164 /* ExchangeCollectionViewCell.swift */,
+				46BE981F221D86670063FABD /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		463A0C672224651E0007F74F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				46687BAD222093BA00E00164 /* OCExchangePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		463A0C68222465300007F74F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				46BE981B221D86670063FABD /* AppDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		463A0C692224653E0007F74F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				46BE9822221D86680063FABD /* Assets.xcassets */,
+				46BE9824221D86680063FABD /* LaunchScreen.storyboard */,
+				46BE9827221D86680063FABD /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		46BE980F221D86670063FABD = {
 			isa = PBXGroup;
 			children = (
@@ -102,15 +139,10 @@
 		46BE981A221D86670063FABD /* OCExchangeiOS */ = {
 			isa = PBXGroup;
 			children = (
-				46BE981B221D86670063FABD /* AppDelegate.swift */,
-				46687BAF2220A6B000E00164 /* ExchangeCollectionViewCell.swift */,
-				46687BAD222093BA00E00164 /* OCExchangePresenter.swift */,
-				46BE981D221D86670063FABD /* OCExchangeViewController.swift */,
-				463A0C64222463060007F74F /* CustomLabel.swift */,
-				46BE981F221D86670063FABD /* Main.storyboard */,
-				46BE9822221D86680063FABD /* Assets.xcassets */,
-				46BE9824221D86680063FABD /* LaunchScreen.storyboard */,
-				46BE9827221D86680063FABD /* Info.plist */,
+				463A0C68222465300007F74F /* Main */,
+				463A0C66222465140007F74F /* View */,
+				463A0C672224651E0007F74F /* Presenter */,
+				463A0C692224653E0007F74F /* Supporting Files */,
 			);
 			path = OCExchangeiOS;
 			sourceTree = "<group>";
@@ -404,7 +436,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78BZCUCGN3;
-				INFOPLIST_FILE = OCExchangeiOS/Info.plist;
+				INFOPLIST_FILE = "OCExchangeiOS/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -422,7 +454,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 78BZCUCGN3;
-				INFOPLIST_FILE = OCExchangeiOS/Info.plist;
+				INFOPLIST_FILE = "OCExchangeiOS/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
