@@ -14,6 +14,12 @@ class ExchangeCollectionViewCell: UICollectionViewCell, ExchangeCellView {
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var symbolLabel: UILabel!
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        layer.cornerRadius = 10
+    }
+
     func display(exchangeViewModel: ExchangeViewModel) {
         codeLabel.text = exchangeViewModel.code
         flagLabel.text = exchangeViewModel.flag

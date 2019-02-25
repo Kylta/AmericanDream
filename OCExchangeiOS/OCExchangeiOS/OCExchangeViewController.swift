@@ -20,9 +20,7 @@ final class OCExchangeViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView.dataSource = self
-        collectionView.delegate = self
-
+        setupCollectionView()
         presenter.viewDidLoad()
     }
 
@@ -47,6 +45,16 @@ extension OCExchangeViewController: ExchangeView {
 }
 
 extension OCExchangeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+
+    // MARK: - Layout
+    fileprivate func setupCollectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 16
+        collectionView.collectionViewLayout = layout
+    }
 
     // MARK: - DataSource
 
