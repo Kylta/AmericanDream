@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4638C89C222171AF00DC3826 /* genericModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 4638C89B222171A600DC3826 /* genericModel.json */; };
-		463A0C65222463060007F74F /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463A0C64222463060007F74F /* CustomLabel.swift */; };
+		463A0C65222463060007F74F /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463A0C64222463060007F74F /* CustomTextField.swift */; };
+		463A0C6C22251D6B0007F74F /* OCExchangeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463A0C6B22251D6B0007F74F /* OCExchangeUseCase.swift */; };
+		463A0C6E2225AE330007F74F /* Double+RoundDoubleValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463A0C6D2225AE330007F74F /* Double+RoundDoubleValue.swift */; };
 		46687BAE222093BA00E00164 /* OCExchangePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46687BAD222093BA00E00164 /* OCExchangePresenter.swift */; };
 		46687BB02220A6B000E00164 /* ExchangeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46687BAF2220A6B000E00164 /* ExchangeCollectionViewCell.swift */; };
 		46BE981C221D86670063FABD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BE981B221D86670063FABD /* AppDelegate.swift */; };
@@ -45,7 +47,9 @@
 
 /* Begin PBXFileReference section */
 		4638C89B222171A600DC3826 /* genericModel.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = genericModel.json; sourceTree = "<group>"; };
-		463A0C64222463060007F74F /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
+		463A0C64222463060007F74F /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		463A0C6B22251D6B0007F74F /* OCExchangeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCExchangeUseCase.swift; sourceTree = "<group>"; };
+		463A0C6D2225AE330007F74F /* Double+RoundDoubleValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+RoundDoubleValue.swift"; sourceTree = "<group>"; };
 		46687BAD222093BA00E00164 /* OCExchangePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCExchangePresenter.swift; sourceTree = "<group>"; };
 		46687BAF2220A6B000E00164 /* ExchangeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeCollectionViewCell.swift; sourceTree = "<group>"; };
 		46BE9818221D86670063FABD /* OCExchangeiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCExchangeiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +124,8 @@
 		463A0C6A222465AD0007F74F /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				463A0C64222463060007F74F /* CustomLabel.swift */,
+				463A0C64222463060007F74F /* CustomTextField.swift */,
+				463A0C6D2225AE330007F74F /* Double+RoundDoubleValue.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 				463A0C66222465140007F74F /* View */,
 				463A0C672224651E0007F74F /* Presenter */,
 				463A0C692224653E0007F74F /* Supporting Files */,
+				463A0C6B22251D6B0007F74F /* OCExchangeUseCase.swift */,
 			);
 			path = OCExchangeiOS;
 			sourceTree = "<group>";
@@ -276,8 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				463A0C6C22251D6B0007F74F /* OCExchangeUseCase.swift in Sources */,
 				46BE981C221D86670063FABD /* AppDelegate.swift in Sources */,
-				463A0C65222463060007F74F /* CustomLabel.swift in Sources */,
+				463A0C65222463060007F74F /* CustomTextField.swift in Sources */,
+				463A0C6E2225AE330007F74F /* Double+RoundDoubleValue.swift in Sources */,
 				46ECDE652220A9EC0095DDF1 /* OCExchangeViewController.swift in Sources */,
 				46687BB02220A6B000E00164 /* ExchangeCollectionViewCell.swift in Sources */,
 				46687BAE222093BA00E00164 /* OCExchangePresenter.swift in Sources */,
