@@ -73,7 +73,7 @@ class RemoteExchangeLoaderTests: XCTestCase {
         let item = makeItem(date: "2019-02-18",
                             base: "EUR",
                             timestamp: 1550517245,
-                            currency: ["GBP": 0.87, "CAD": 1.49, "AUD": 1.58, "JPY": 125.07, "CNY": 7.65, "INR": 80.75, "SGD": 1.53, "BRL": 4.21, "IDR": 15981.74, "VND": 26236.82, "MXN": 21.76])
+                            currency: ["GBP": 0.87, "USD": 1.13, "CAD": 1.49, "AUD": 1.58, "JPY": 125.07, "CNY": 7.65, "INR": 80.75, "SGD": 1.53, "BRL": 4.21, "IDR": 15981.74, "VND": 26236.82, "MXN": 21.76])
 
         expect(sut: sut, toCompleteWith: .success(item.model), when: {
             client.complete(withStatusCode: 200, data: makeJSON(valid: true))

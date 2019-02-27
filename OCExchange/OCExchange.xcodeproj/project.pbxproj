@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		460CE9FC2220A8EB00551C32 /* GenericLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2468D22194C680066F113 /* GenericLoader.swift */; };
+		46BE97CD221D85320063FABD /* OCExchange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46BE97C4221D85310063FABD /* OCExchange.framework */; };
+		46BE983B221D86F60063FABD /* XCTestCase+TrackMemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2469E22199FB10066F113 /* XCTestCase+TrackMemoryLeaks.swift */; };
+		46BE983C221D86F60063FABD /* genericModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 46E246B62219D1AE0066F113 /* genericModel.json */; };
+		46BE983D221D86F60063FABD /* RemoteExchangeLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2468B22194B6C0066F113 /* RemoteExchangeLoaderTests.swift */; };
+		46BE983E221D86F60063FABD /* URLSessionHTTPClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2469B22198DDE0066F113 /* URLSessionHTTPClientTests.swift */; };
+		46BE983F221D86F60063FABD /* GenericAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E246A82219B61F0066F113 /* GenericAPIEndToEndTests.swift */; };
 		46E24679221949210066F113 /* OCExchange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E2466F221949210066F113 /* OCExchange.framework */; };
 		46E2468A221949E80066F113 /* ExchangeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E24689221949E80066F113 /* ExchangeItem.swift */; };
 		46E2468C22194B6C0066F113 /* RemoteExchangeLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2468B22194B6C0066F113 /* RemoteExchangeLoaderTests.swift */; };
@@ -21,9 +28,21 @@
 		46E246AB2219B61F0066F113 /* OCExchange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E2466F221949210066F113 /* OCExchange.framework */; };
 		46E246B42219C0840066F113 /* XCTestCase+TrackMemoryLeaks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2469E22199FB10066F113 /* XCTestCase+TrackMemoryLeaks.swift */; };
 		46E246B72219D1AE0066F113 /* genericModel.json in Resources */ = {isa = PBXBuildFile; fileRef = 46E246B62219D1AE0066F113 /* genericModel.json */; };
+		46ECDE642220A9D40095DDF1 /* ExchangeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E24689221949E80066F113 /* ExchangeItem.swift */; };
+		46ECDE662220AA2F0095DDF1 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E246A02219B0B30066F113 /* URLSessionHTTPClient.swift */; };
+		46ECDE672220AA310095DDF1 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E24698221977930066F113 /* HTTPClient.swift */; };
+		46ECDE682220AA340095DDF1 /* ExchangeItemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E2469622196F5A0066F113 /* ExchangeItemMapper.swift */; };
+		46ECDE692220AA360095DDF1 /* RemoteExchangeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E24690221950390066F113 /* RemoteExchangeLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		46BE97CE221D85320063FABD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46E24666221949210066F113 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 46BE97C3221D85310063FABD;
+			remoteInfo = OCExchange_iOS;
+		};
 		46E2467A221949210066F113 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 46E24666221949210066F113 /* Project object */;
@@ -41,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		46BE97C4221D85310063FABD /* OCExchange.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OCExchange.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		46BE97CC221D85320063FABD /* OCExchange_iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCExchange_iOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E2466F221949210066F113 /* OCExchange.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OCExchange.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46E24673221949210066F113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46E24678221949210066F113 /* OCExchangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCExchangeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +82,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		46BE97C1221D85310063FABD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46BE97C9221D85320063FABD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46BE97CD221D85320063FABD /* OCExchange.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46E2466C221949210066F113 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -103,6 +139,8 @@
 				46E2466F221949210066F113 /* OCExchange.framework */,
 				46E24678221949210066F113 /* OCExchangeTests.xctest */,
 				46E246A62219B61F0066F113 /* OCExchangeAPIEndToEndTests.xctest */,
+				46BE97C4221D85310063FABD /* OCExchange.framework */,
+				46BE97CC221D85320063FABD /* OCExchange_iOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,6 +223,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		46BE97BF221D85310063FABD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46E2466A221949210066F113 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -195,6 +240,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		46BE97C3221D85310063FABD /* OCExchange_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46BE97D9221D85320063FABD /* Build configuration list for PBXNativeTarget "OCExchange_iOS" */;
+			buildPhases = (
+				46BE97BF221D85310063FABD /* Headers */,
+				46BE97C0221D85310063FABD /* Sources */,
+				46BE97C1221D85310063FABD /* Frameworks */,
+				46BE97C2221D85310063FABD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OCExchange_iOS;
+			productName = OCExchange_iOS;
+			productReference = 46BE97C4221D85310063FABD /* OCExchange.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		46BE97CB221D85320063FABD /* OCExchange_iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46BE97DA221D85320063FABD /* Build configuration list for PBXNativeTarget "OCExchange_iOSTests" */;
+			buildPhases = (
+				46BE97C8221D85320063FABD /* Sources */,
+				46BE97C9221D85320063FABD /* Frameworks */,
+				46BE97CA221D85320063FABD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46BE97CF221D85320063FABD /* PBXTargetDependency */,
+			);
+			name = OCExchange_iOSTests;
+			productName = OCExchange_iOSTests;
+			productReference = 46BE97CC221D85320063FABD /* OCExchange_iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		46E2466E221949210066F113 /* OCExchange */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 46E24683221949220066F113 /* Build configuration list for PBXNativeTarget "OCExchange" */;
@@ -259,6 +340,12 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Christophe Bugnon";
 				TargetAttributes = {
+					46BE97C3221D85310063FABD = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					46BE97CB221D85320063FABD = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					46E2466E221949210066F113 = {
 						CreatedOnToolsVersion = 10.1;
 						LastSwiftMigration = 1010;
@@ -287,11 +374,28 @@
 				46E2466E221949210066F113 /* OCExchange */,
 				46E24677221949210066F113 /* OCExchangeTests */,
 				46E246A52219B61F0066F113 /* OCExchangeAPIEndToEndTests */,
+				46BE97C3221D85310063FABD /* OCExchange_iOS */,
+				46BE97CB221D85320063FABD /* OCExchange_iOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		46BE97C2221D85310063FABD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46BE97CA221D85320063FABD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46BE983C221D86F60063FABD /* genericModel.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46E2466D221949210066F113 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -317,6 +421,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		46BE97C0221D85310063FABD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				460CE9FC2220A8EB00551C32 /* GenericLoader.swift in Sources */,
+				46ECDE642220A9D40095DDF1 /* ExchangeItem.swift in Sources */,
+				46ECDE672220AA310095DDF1 /* HTTPClient.swift in Sources */,
+				46ECDE692220AA360095DDF1 /* RemoteExchangeLoader.swift in Sources */,
+				46ECDE662220AA2F0095DDF1 /* URLSessionHTTPClient.swift in Sources */,
+				46ECDE682220AA340095DDF1 /* ExchangeItemMapper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46BE97C8221D85320063FABD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46BE983B221D86F60063FABD /* XCTestCase+TrackMemoryLeaks.swift in Sources */,
+				46BE983E221D86F60063FABD /* URLSessionHTTPClientTests.swift in Sources */,
+				46BE983D221D86F60063FABD /* RemoteExchangeLoaderTests.swift in Sources */,
+				46BE983F221D86F60063FABD /* GenericAPIEndToEndTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46E2466B221949210066F113 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -352,6 +480,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		46BE97CF221D85320063FABD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 46BE97C3221D85310063FABD /* OCExchange_iOS */;
+			targetProxy = 46BE97CE221D85320063FABD /* PBXContainerItemProxy */;
+		};
 		46E2467B221949210066F113 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 46E2466E221949210066F113 /* OCExchange */;
@@ -365,6 +498,106 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		46BE97D5221D85320063FABD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 78BZCUCGN3;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = OCExchange/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.christophebugnon.OCExchange-iOS";
+				PRODUCT_NAME = OCExchange;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		46BE97D6221D85320063FABD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 78BZCUCGN3;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = OCExchange/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.christophebugnon.OCExchange-iOS";
+				PRODUCT_NAME = OCExchange;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		46BE97D7221D85320063FABD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 78BZCUCGN3;
+				INFOPLIST_FILE = ExchangeAPITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.christophebugnon.OCExchange-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		46BE97D8221D85320063FABD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 78BZCUCGN3;
+				INFOPLIST_FILE = ExchangeAPITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.christophebugnon.OCExchange-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		46E24681221949220066F113 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -621,6 +854,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		46BE97D9221D85320063FABD /* Build configuration list for PBXNativeTarget "OCExchange_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46BE97D5221D85320063FABD /* Debug */,
+				46BE97D6221D85320063FABD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46BE97DA221D85320063FABD /* Build configuration list for PBXNativeTarget "OCExchange_iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46BE97D7221D85320063FABD /* Debug */,
+				46BE97D8221D85320063FABD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		46E24669221949210066F113 /* Build configuration list for PBXProject "OCExchange" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
