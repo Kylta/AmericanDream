@@ -9,7 +9,7 @@
 import Foundation
 import OCExchange
 
-protocol ExchangeView: class {
+protocol ExchangePresenterOutput: class {
     func refreshExchangeView()
     func displayPopUpError(title: String, message: String)
 }
@@ -27,49 +27,52 @@ struct ExchangeViewModel {
 
 protocol ExchangePresenter {
     var numberOfCurrencies: Int { get }
-    func viewDidLoad()
     func configure(cell: ExchangeCellView, forRow row: Int)
 }
 
-final class ExchangePresenterImplementation: ExchangePresenter {
-    fileprivate weak var view: ExchangeView?
-    fileprivate let loader: RemoteExchangeLoader
-
+final class ExchangeDataPresenter: ExchangePresenter, FetchExchangeUseCaseOutput {
+    fileprivate weak var output: ExchangePresenterOutput?
+    fileprivate var exchangeViewModel = [ExchangeViewModel]()
     fileprivate var exchangeData: ExchangeModel?
 
     var numberOfCurrencies: Int {
-        return exchangeData?.currency.count ?? 0
+        return exchangeViewModel.count
     }
 
-    init(view: ExchangeView, loader: RemoteExchangeLoader) {
-        self.view = view
-        self.loader = loader
+    init(output: ExchangePresenterOutput) {
+        self.output = output
     }
 
-    func viewDidLoad() {
-        loader.load { [weak self] result in
-            switch result {
-            case let .success(item):
-                self?.exchangeData = item
-                self?.view?.refreshExchangeView()
-            case let .failure(error):
-                switch error as! RemoteExchangeLoader.Error {
-                case .connectivity:
-                    self?.view?.displayPopUpError(title: "Error", message: "Fail to load data, check your internet access.")
-                case .invalidData:
-                    self?.view?.displayPopUpError(title: "Error", message: "An error system occurred, please contact support or try again later.")
-                }
-            }
+    func didFetch(_ result: RemoteExchangeLoader.Result) {
+        switch result {
+        case let .success(items):
+            mapDataToViewModel(data: items)
+        case let .failure(error):
+            manageError(error: error)
         }
     }
 
     func configure(cell: ExchangeCellView, forRow row: Int) {
-        let ordererValue = exchangeData?.currency.sorted(by: { $0.value < $1.value })
+        cell.display(exchangeViewModel: exchangeViewModel[row])
+        self.output?.refreshExchangeView()
+    }
 
-        if let dictionary = ordererValue?[row],
-            let flag = exchangeData?.getEmojiFlag(regionCode: dictionary.key),
-            let symbol = exchangeData?.getSymbol(forCurrencyCode: dictionary.key) {
-            cell.display(exchangeViewModel: ExchangeViewModel(code: dictionary.key, flag: flag, symbol: symbol, currencyValue: String(dictionary.value)))
+    fileprivate func mapDataToViewModel(data: ExchangeModel)  {
+        let ordererValue = data.currency.sorted(by: { $0.value < $1.value })
+        exchangeViewModel = ordererValue.map { tuple -> ExchangeViewModel in
+            let flag = data.getEmojiFlag(regionCode: tuple.key)
+            let symbol = data.getSymbol(forCurrencyCode: tuple.key)
+            return ExchangeViewModel(code: tuple.key, flag: flag, symbol: symbol, currencyValue: String(tuple.value))
+        }
+        output?.refreshExchangeView()
+    }
+
+    fileprivate func manageError(error: Error) {
+        switch error as! RemoteExchangeLoader.Error {
+        case .connectivity:
+            output?.displayPopUpError(title: "Error", message: "Failed to fetch Data, please check your connexion.")
+        case .invalidData:
+            output?.displayPopUpError(title: "Error", message: "An error system occure, please contact support or try again later.")
         }
     }
 }

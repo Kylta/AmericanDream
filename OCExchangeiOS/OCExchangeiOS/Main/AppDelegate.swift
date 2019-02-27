@@ -18,11 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         if let vc = window?.rootViewController as? OCExchangeViewController {
+            let presenter = ExchangeDataPresenter(output: vc)
             let client = URLSessionHTTPClient()
             let url = URL(string: "http://data.fixer.io/api/latest?access_key=356dae2235195b60bb99471f9de6c140&base?=EUR&symbols=USD,GBP,CAD,AUD,JPY,CNY,INR,SGD,BRL,IDR,VND,MXN")!
             let loader = RemoteExchangeLoader(client: client, url: url)
-            let presenter = ExchangePresenterImplementation(view: vc, loader: loader)
+            let exchangeFetcher = FetchExchangeUseCase(loader: loader, output: presenter)
             vc.presenter = presenter
+            vc.reloadData = exchangeFetcher.fetch
         }
 
         return true

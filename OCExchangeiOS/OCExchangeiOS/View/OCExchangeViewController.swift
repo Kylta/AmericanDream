@@ -10,26 +10,45 @@ import UIKit
 import OCExchange
 
 final class OCExchangeViewController: UIViewController  {
-    @IBOutlet weak var label: CustomLabel!
+    @IBOutlet weak var textField: CustomTextField! {
+        didSet {
+            textField.keyboardType = .decimalPad
+        }
+    }
     @IBOutlet weak var reloadButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
 
-    var reloadData: (Double) -> Void = { _ in }
-    var presenter: ExchangePresenter!
+    var reloadData: ((Double?) -> Void)?
+    var presenter: ExchangeDataPresenter!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupCollectionView()
-        presenter.viewDidLoad()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        reloadData?(Double(textField.text!)!)
     }
 
     @IBAction private func reload() {
-        reloadData(Double(label.text!)!)
+        reloadData?(Double(textField.text!))
+        textField.endEditing(true)
+    }
+
+    fileprivate func setupCollectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 16
+        collectionView.collectionViewLayout = layout
     }
 }
 
-extension OCExchangeViewController: ExchangeView {
+extension OCExchangeViewController: ExchangePresenterOutput {
     func refreshExchangeView() {
         DispatchQueue.main.async { [weak self] in
             self?.collectionView.reloadData()
@@ -45,16 +64,6 @@ extension OCExchangeViewController: ExchangeView {
 }
 
 extension OCExchangeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-
-    // MARK: - Layout
-    fileprivate func setupCollectionView() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
-
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 16
-        collectionView.collectionViewLayout = layout
-    }
 
     // MARK: - DataSource
 

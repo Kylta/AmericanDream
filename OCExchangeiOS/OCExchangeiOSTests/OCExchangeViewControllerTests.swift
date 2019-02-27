@@ -23,7 +23,9 @@ class OCExchangeCViewControllerTests: XCTestCase {
     func test_priceLabelOutlet_isConnected() {
         let sut = makeSUT()
 
-        XCTAssertEqual(sut.label.text, "1.0")
+        sut.viewWillAppear(false)
+        
+        XCTAssertEqual(sut.textField.text, "1.0")
     }
 
     func test_priceButtonOutlet_isConnected() {
@@ -50,26 +52,20 @@ class OCExchangeCViewControllerTests: XCTestCase {
     func test_updateLabel_renderValueInReloadData() {
         let sut = makeSUT()
 
-        sut.reloadData(2.0)
+        sut.reloadData?(nil)
         sut.reloadButton.sendActions(for: .touchUpInside)
 
-        sut.reloadData = { value in
-            XCTAssertEqual(value, 2.0)
-        }
-    }
-
-    func test_viewDidLoad_transfertExchangeDataInOCExchangeViewController() {
-        let sut = makeSUT()
-
-        XCTAssertEqual(sut.collectionView.numberOfItems(inSection: 0), 12)
+        XCTAssertEqual(sut.textField.text, "1.0")
     }
 
     func test_viewDidLoad_rendersValueInExchangeViewCell() {
         let sut = makeSUT()
 
+        sut.viewWillAppear(false)
         let indexPath = IndexPath(item: 0, section: 0)
         let cell = sut.collectionView.dataSource?.collectionView(sut.collectionView, cellForItemAt: indexPath) as! ExchangeCollectionViewCell
 
+        XCTAssertEqual(sut.collectionView.numberOfItems(inSection: 0), 12)
         XCTAssertEqual(cell.codeLabel.text, "GBP")
         XCTAssertEqual(cell.flagLabel.text, "🇬🇧")
         XCTAssertEqual(cell.symbolLabel.text, "£")
@@ -79,11 +75,15 @@ class OCExchangeCViewControllerTests: XCTestCase {
     func test_invalidDataError_doesntLoadData() {
         let sut = makeSUT(isValidData: false)
 
+        sut.viewWillAppear(false)
+
         XCTAssertEqual(sut.collectionView.numberOfItems(inSection: 0), 0)
     }
 
     func test_connectivityError_doesntLoadData() {
         let sut = makeSUT(isValidData: true, code: -1009)
+
+        sut.viewWillAppear(false)
 
         XCTAssertEqual(sut.collectionView.numberOfItems(inSection: 0), 0)
     }
@@ -92,11 +92,13 @@ class OCExchangeCViewControllerTests: XCTestCase {
         var sut: OCExchangeViewController!
 
         if let vc = sb.instantiateInitialViewController() as? OCExchangeViewController {
+            let presenter = ExchangeDataPresenter(output: vc)
             let url = URL(string: "http://any-url.com")!
             let client = HTTPClientMock(isValidData: isValidData, code: code)
             let loader = RemoteExchangeLoader(client: client, url: url)
-            let presenter = ExchangePresenterImplementation(view: vc, loader: loader)
+            let exchangeFetcher = FetchExchangeUseCase(loader: loader, output: presenter)
             vc.presenter = presenter
+            vc.reloadData = exchangeFetcher.fetch
             vc.loadViewIfNeeded()
             sut = vc
         }
