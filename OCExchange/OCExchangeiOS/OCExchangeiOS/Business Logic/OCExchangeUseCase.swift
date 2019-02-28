@@ -10,14 +10,15 @@ import Foundation
 import OCExchange
 
 protocol FetchExchangeUseCaseOutput {
-    func didFetch(_ result: RemoteExchangeLoader.Result)
+    func didFetch(_ items: ExchangeModel)
+    func failFetch(_ error: Error)
 }
 
 final class FetchExchangeUseCase {
-    let loader: RemoteExchangeLoader
+    let loader: GenericLoader
     let output: FetchExchangeUseCaseOutput
 
-    init(loader: RemoteExchangeLoader, output: FetchExchangeUseCaseOutput) {
+    init(loader: GenericLoader, output: FetchExchangeUseCaseOutput) {
         self.loader = loader
         self.output = output
     }
@@ -28,9 +29,9 @@ final class FetchExchangeUseCase {
             case let .success(item):
                 var currencies = [String: Double]()
                 item.currency.forEach { currencies[$0.key] = Double($0.value * (updateValue ?? 1.0)).rounded(toPlaces: 3) }
-                self?.output.didFetch(.success(ExchangeModel(timestamp: item.timestamp, date: item.date, base: item.base, currency: currencies)))
+                self?.output.didFetch(ExchangeModel(timestamp: item.timestamp, date: item.date, base: item.base, currency: currencies))
             case let .failure(error):
-                self?.output.didFetch(.failure(error))
+                self?.output.failFetch(error)
             }
         }
     }
